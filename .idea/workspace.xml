@@ -3,15 +3,44 @@
   <component name="ChangeListManager">
     <list default="true" id="87eeb42f-554d-425d-9b34-617c55530e69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cheetah_element_xpath.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/cheetah_element_xpath.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/riil_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/riil_helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/output.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-10.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-11.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-12.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-13.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-14.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-14.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-15.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-16.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-17.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-18.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-18.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-19.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-19.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-20.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-20.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-21.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-21.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-22.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-22.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-23.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-24.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-24.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-25.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-25.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-26.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-26.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-27.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-27.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-28.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-28.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-29.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-29.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-30.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-30.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-31.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-31.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-32.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-33.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-33.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-34.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-34.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-5.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-6.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-7.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-8.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/selenium-screenshot-9.png" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/results/selenium-screenshot-9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/验证添加IP分组_633799.robot" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/验证添加IP分组_633799.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="5" selection-start-line="5" selection-end-line="5" selection-end-column="6" />
+            <state relative-caret-position="135">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
@@ -36,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/cheetah_element_xpath.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -48,7 +77,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
+            <state relative-caret-position="525">
               <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
               <folding>
                 <element signature="e#0#104#0" expanded="true" />
@@ -72,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="360">
+              <caret line="24" column="8" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="e#0#89#0" expanded="true" />
               </folding>
@@ -85,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/lib/riil_helper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding>
                 <element signature="e#15#34#0" expanded="true" />
               </folding>
@@ -96,6 +125,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Qingbo" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -147,6 +181,27 @@
               <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
               <item name="testcases" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
+              <item name="testcases" type="462c0819:PsiDirectoryNode" />
+              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
+              <item name="testcases" type="462c0819:PsiDirectoryNode" />
+              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
+              <item name="菜单栏" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
+              <item name="testcases" type="462c0819:PsiDirectoryNode" />
+              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
+              <item name="菜单栏" type="462c0819:PsiDirectoryNode" />
+              <item name="系统配置" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -188,7 +243,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550460603886</updated>
-      <workItem from="1550460607792" duration="15357000" />
+      <workItem from="1550460607792" duration="16378000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1550461770721</created>
@@ -204,18 +259,24 @@
       <option name="project" value="LOCAL" />
       <updated>1550461961539</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1550486706376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1550486706376</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15357000" />
+    <option name="totallyTimeSpent" value="16378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" sideWeight="0.50127226" side_tool="true" weight="0.22280967" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49900597" weight="0.19108762" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49900597" visible="true" weight="0.19108762" />
       <window_info id="Structure" order="1" sideWeight="0.500994" side_tool="true" weight="0.19108762" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -225,7 +286,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32902297" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27586207" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27586207" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -267,17 +328,20 @@
     <entry file="file://$PROJECT_DIR$/lib/riil_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
             <element signature="e#15#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="360">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="8" />
           <folding>
             <element signature="e#0#89#0" expanded="true" />
           </folding>
@@ -296,20 +360,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
+        <state relative-caret-position="525">
           <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
           <folding>
             <element signature="e#0#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" selection-start-line="5" selection-end-line="5" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#115#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -318,6 +372,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcases/cheetah/菜单栏/系统配置/验证添加IP分组_633799.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#115#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
