@@ -6,7 +6,7 @@ Resource  riil_common_keyword_resource.txt
 *** Keywords ***
 
 打开浏览器
-    ${url}  get_xpath  login_page  cheetah
+    ${url}  get_xpath  登录页  cheetah  cheetah
     Open Browser   ${url}  chrome
     MAXIMIZE BROWSER WINDOW
 
@@ -15,16 +15,36 @@ Resource  riil_common_keyword_resource.txt
 
 登录名称
     [Arguments]  ${str_name}
-    输入字符串  login_page  username  ${str_name}
+    输入字符串  登录页  username  ${str_name}
 
 登录密码
     [Arguments]  ${str_name}
-    输入字符串  login_page  password  ${str_name}
+    输入字符串  登录页  password  ${str_name}
 
-登录
-    点击按钮  login_page  login_button
+登录按钮
+    点击按钮  登录页  login_button
     等待
-    校验字符串  cheetah_homepage  admin_name  系统管理员
+    校验字符串  猎豹主页  admin_name  系统管理员
+
+展开菜单
+    点击元素  猎豹主页   sc_icon
+
+打开目录
+    [Arguments]  ${str_name}
+    点击查找指定元素   div   ${str_name}
+
+新建
+    点击按钮  通用    add_button
+
+输入名称
+    [Arguments]  ${section}  ${xpath_name}  ${str_name}
+    点击元素    ${section}  ${xpath_name}
+    输入字符串   ${section}  ${xpath_name}  ${str_name}
+
+保存按钮
+    点击按钮  通用  save_button
+
+
 
 
 

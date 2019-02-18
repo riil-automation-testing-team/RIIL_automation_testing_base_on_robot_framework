@@ -6,30 +6,34 @@ Library  ../lib/riil_helper.py
 
 校验字符串
     [Arguments]    ${section}  ${xpath_name}  ${str}
-    ${s}  get_xpath  ${section}  ${xpath_name}
+    ${s}  get_xpath  ${section}  ${xpath_name}  cheetah
     ${fullstr}  get text  ${s}
     should contain  ${fullstr}  ${str}
 
-等待
-    set browser implicit wait  5
-#
-#悬浮
-#    [Arguments]  {elenment_locale}
-#    mouse over  {elenment_locale}
+隐式等待
+    set browser implicit wait  10
 
-查找元素
+等待
+    sleep  2
+
+悬浮
+    [Arguments]  ${section}  ${xpath_name}
+    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
+    mouse over  {elenment_locale}
+
+点击查找指定元素
     [Arguments]   ${search_type}   ${search_name}
     ${button_name}  get common search  ${search_type}   ${search_name}
     click element   ${button_name}
 
 点击按钮
     [Arguments]  ${section}  ${xpath_name}
-    ${name}  get_xpath  ${section}  ${xpath_name}
+    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
     click button   ${name}
 
 点击元素
     [Arguments]  ${section}  ${xpath_name}
-    ${name}  get_xpath  ${section}  ${xpath_name}
+    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
     click element  ${name}
 
 输入字符串Excel版
@@ -39,5 +43,5 @@ Library  ../lib/riil_helper.py
 
 输入字符串
     [Arguments]   ${section}  ${xpath_name}  ${str_name}
-    ${user}  get_xpath  ${section}  ${xpath_name}
+    ${user}  get_xpath  ${section}  ${xpath_name}   cheetah
     input text  ${user}  ${str_name}

@@ -16,9 +16,12 @@ def get_data_from_excel(url):
     return xpath
 
 
-def get_xpath(section, name):
+def get_xpath(section, name, product):
     cf = configparser.ConfigParser()
-    cf.read(u'../../../../data/cheetah_element_xpath.conf')
+    if product == 'cheetah':
+        cf.read(u'../../../../data/cheetah_element_xpath.conf')
+    elif product == 'relax':
+        cf.read(u'../../../../data/relax_element_xpath.conf')
     # print(cf.get(section, name))
     return cf.get(section, name)
 
@@ -26,7 +29,6 @@ def get_xpath(section, name):
 def get_common_search(search_type, search_element_name):
     print("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
     return str("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
-
 
 # if __name__ == '__main__':
 #     print(get_data_from_excel())

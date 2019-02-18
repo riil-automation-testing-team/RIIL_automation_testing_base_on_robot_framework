@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.6.2 on darwin)" generated="20190218 11:36:20.991" rpa="false">
+<robot generator="Robot 3.1.1 (Python 3.6.2 on darwin)" generated="20190218 18:43:00.201" rpa="false">
 <suite id="s1" name="IP分组管理" source="/Users/qingbo/testproject/RIIL_automation_testing_base_on_robot_framework/testcases/cheetah/系统配置/IP分组管理">
 <suite id="s1-s1" name="验证添加IP分组 633799" source="/Users/qingbo/testproject/RIIL_automation_testing_base_on_robot_framework/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot">
 <test id="s1-s1-t1" name="添加IP分组">
@@ -11,14 +11,15 @@
 <kw name="打开浏览器" library="cheetah_element_keyword_resource">
 <kw name="Get Xpath" library="riil_helper">
 <arguments>
-<arg>login_page</arg>
+<arg>登录页</arg>
+<arg>cheetah</arg>
 <arg>cheetah</arg>
 </arguments>
 <assign>
 <var>${url}</var>
 </assign>
-<msg timestamp="20190218 11:36:21.409" level="INFO">${url} = http://172.17.161.94/cheetah/</msg>
-<status status="PASS" starttime="20190218 11:36:21.407" endtime="20190218 11:36:21.409"></status>
+<msg timestamp="20190218 18:43:00.586" level="INFO">${url} = http://172.17.161.95/cheetah/</msg>
+<status status="PASS" starttime="20190218 18:43:00.584" endtime="20190218 18:43:00.586"></status>
 </kw>
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -26,24 +27,24 @@
 <arg>${url}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20190218 11:36:21.409" level="INFO">Opening browser 'chrome' to base url 'http://172.17.161.94/cheetah/'.</msg>
-<status status="PASS" starttime="20190218 11:36:21.409" endtime="20190218 11:36:36.363"></status>
+<msg timestamp="20190218 18:43:00.587" level="INFO">Opening browser 'chrome' to base url 'http://172.17.161.95/cheetah/'.</msg>
+<status status="PASS" starttime="20190218 18:43:00.586" endtime="20190218 18:43:17.416"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20190218 11:36:36.365" endtime="20190218 11:36:36.671"></status>
+<status status="PASS" starttime="20190218 18:43:17.418" endtime="20190218 18:43:17.727"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:21.407" endtime="20190218 11:36:36.672"></status>
+<status status="PASS" starttime="20190218 18:43:00.584" endtime="20190218 18:43:17.728"></status>
 </kw>
-<kw name="等待" library="riil_common_keyword_resource">
+<kw name="隐式等待" library="riil_common_keyword_resource">
 <kw name="Set Browser Implicit Wait" library="Selenium2Library">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
-<arg>5</arg>
+<arg>10</arg>
 </arguments>
-<status status="PASS" starttime="20190218 11:36:36.673" endtime="20190218 11:36:36.676"></status>
+<status status="PASS" starttime="20190218 18:43:17.729" endtime="20190218 18:43:17.732"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:36.672" endtime="20190218 11:36:36.677"></status>
+<status status="PASS" starttime="20190218 18:43:17.728" endtime="20190218 18:43:17.732"></status>
 </kw>
 <kw name="登录名称" library="cheetah_element_keyword_resource">
 <arguments>
@@ -51,7 +52,7 @@
 </arguments>
 <kw name="输入字符串" library="riil_common_keyword_resource">
 <arguments>
-<arg>login_page</arg>
+<arg>登录页</arg>
 <arg>username</arg>
 <arg>${str_name}</arg>
 </arguments>
@@ -59,12 +60,13 @@
 <arguments>
 <arg>${section}</arg>
 <arg>${xpath_name}</arg>
+<arg>cheetah</arg>
 </arguments>
 <assign>
 <var>${user}</var>
 </assign>
-<msg timestamp="20190218 11:36:36.685" level="INFO">${user} = //*[@id="username"]</msg>
-<status status="PASS" starttime="20190218 11:36:36.681" endtime="20190218 11:36:36.685"></status>
+<msg timestamp="20190218 18:43:17.748" level="INFO">${user} = //*[@id="username"]</msg>
+<status status="PASS" starttime="20190218 18:43:17.737" endtime="20190218 18:43:17.748"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -72,12 +74,12 @@
 <arg>${user}</arg>
 <arg>${str_name}</arg>
 </arguments>
-<msg timestamp="20190218 11:36:36.687" level="INFO">Typing text 'admin' into text field '//*[@id="username"]'.</msg>
-<status status="PASS" starttime="20190218 11:36:36.686" endtime="20190218 11:36:37.088"></status>
+<msg timestamp="20190218 18:43:17.749" level="INFO">Typing text 'admin' into text field '//*[@id="username"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:17.748" endtime="20190218 18:43:19.101"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:36.679" endtime="20190218 11:36:37.088"></status>
+<status status="PASS" starttime="20190218 18:43:17.736" endtime="20190218 18:43:19.102"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:36.677" endtime="20190218 11:36:37.088"></status>
+<status status="PASS" starttime="20190218 18:43:17.733" endtime="20190218 18:43:19.102"></status>
 </kw>
 <kw name="登录密码" library="cheetah_element_keyword_resource">
 <arguments>
@@ -85,7 +87,7 @@
 </arguments>
 <kw name="输入字符串" library="riil_common_keyword_resource">
 <arguments>
-<arg>login_page</arg>
+<arg>登录页</arg>
 <arg>password</arg>
 <arg>${str_name}</arg>
 </arguments>
@@ -93,12 +95,13 @@
 <arguments>
 <arg>${section}</arg>
 <arg>${xpath_name}</arg>
+<arg>cheetah</arg>
 </arguments>
 <assign>
 <var>${user}</var>
 </assign>
-<msg timestamp="20190218 11:36:37.090" level="INFO">${user} = //*[@id="password"]</msg>
-<status status="PASS" starttime="20190218 11:36:37.089" endtime="20190218 11:36:37.090"></status>
+<msg timestamp="20190218 18:43:19.106" level="INFO">${user} = //*[@id="password"]</msg>
+<status status="PASS" starttime="20190218 18:43:19.104" endtime="20190218 18:43:19.106"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -106,53 +109,55 @@
 <arg>${user}</arg>
 <arg>${str_name}</arg>
 </arguments>
-<msg timestamp="20190218 11:36:37.090" level="INFO">Typing text 'admin123' into text field '//*[@id="password"]'.</msg>
-<status status="PASS" starttime="20190218 11:36:37.090" endtime="20190218 11:36:37.306"></status>
+<msg timestamp="20190218 18:43:19.107" level="INFO">Typing text 'admin123' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:19.106" endtime="20190218 18:43:20.332"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.089" endtime="20190218 11:36:37.306"></status>
+<status status="PASS" starttime="20190218 18:43:19.103" endtime="20190218 18:43:20.333"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.088" endtime="20190218 11:36:37.306"></status>
+<status status="PASS" starttime="20190218 18:43:19.102" endtime="20190218 18:43:20.333"></status>
 </kw>
-<kw name="登录" library="cheetah_element_keyword_resource">
+<kw name="登录按钮" library="cheetah_element_keyword_resource">
 <kw name="点击按钮" library="riil_common_keyword_resource">
 <arguments>
-<arg>login_page</arg>
+<arg>登录页</arg>
 <arg>login_button</arg>
 </arguments>
 <kw name="Get Xpath" library="riil_helper">
 <arguments>
 <arg>${section}</arg>
 <arg>${xpath_name}</arg>
+<arg>cheetah</arg>
 </arguments>
 <assign>
 <var>${name}</var>
 </assign>
-<msg timestamp="20190218 11:36:37.309" level="INFO">${name} = //*[@class="ant-btn login-form-button ant-btn-primary"]</msg>
-<status status="PASS" starttime="20190218 11:36:37.308" endtime="20190218 11:36:37.309"></status>
+<msg timestamp="20190218 18:43:20.337" level="INFO">${name} = //*[@class="ant-btn login-form-button ant-btn-primary"]</msg>
+<status status="PASS" starttime="20190218 18:43:20.335" endtime="20190218 18:43:20.337"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${name}</arg>
 </arguments>
-<msg timestamp="20190218 11:36:37.309" level="INFO">Clicking button '//*[@class="ant-btn login-form-button ant-btn-primary"]'.</msg>
-<status status="PASS" starttime="20190218 11:36:37.309" endtime="20190218 11:36:37.439"></status>
+<msg timestamp="20190218 18:43:20.338" level="INFO">Clicking button '//*[@class="ant-btn login-form-button ant-btn-primary"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:20.337" endtime="20190218 18:43:21.161"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.307" endtime="20190218 11:36:37.439"></status>
+<status status="PASS" starttime="20190218 18:43:20.334" endtime="20190218 18:43:21.162"></status>
 </kw>
 <kw name="等待" library="riil_common_keyword_resource">
-<kw name="Set Browser Implicit Wait" library="Selenium2Library">
-<doc>Sets the implicit wait value used by Selenium.</doc>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>5</arg>
+<arg>2</arg>
 </arguments>
-<status status="PASS" starttime="20190218 11:36:37.440" endtime="20190218 11:36:37.441"></status>
+<msg timestamp="20190218 18:43:23.166" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190218 18:43:21.163" endtime="20190218 18:43:23.166"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.439" endtime="20190218 11:36:37.441"></status>
+<status status="PASS" starttime="20190218 18:43:21.162" endtime="20190218 18:43:23.167"></status>
 </kw>
 <kw name="校验字符串" library="riil_common_keyword_resource">
 <arguments>
-<arg>cheetah_homepage</arg>
+<arg>猎豹主页</arg>
 <arg>admin_name</arg>
 <arg>系统管理员</arg>
 </arguments>
@@ -160,12 +165,13 @@
 <arguments>
 <arg>${section}</arg>
 <arg>${xpath_name}</arg>
+<arg>cheetah</arg>
 </arguments>
 <assign>
 <var>${s}</var>
 </assign>
-<msg timestamp="20190218 11:36:37.443" level="INFO">${s} = //span[@class="ri-username"]</msg>
-<status status="PASS" starttime="20190218 11:36:37.442" endtime="20190218 11:36:37.443"></status>
+<msg timestamp="20190218 18:43:23.171" level="INFO">${s} = //span[@class="ri-username"]</msg>
+<status status="PASS" starttime="20190218 18:43:23.169" endtime="20190218 18:43:23.171"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by ``locator``.</doc>
@@ -175,8 +181,8 @@
 <assign>
 <var>${fullstr}</var>
 </assign>
-<msg timestamp="20190218 11:36:37.954" level="INFO">${fullstr} = 系统管理员</msg>
-<status status="PASS" starttime="20190218 11:36:37.443" endtime="20190218 11:36:37.954"></status>
+<msg timestamp="20190218 18:43:23.418" level="INFO">${fullstr} = 系统管理员</msg>
+<status status="PASS" starttime="20190218 18:43:23.171" endtime="20190218 18:43:23.418"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -184,19 +190,324 @@
 <arg>${fullstr}</arg>
 <arg>${str}</arg>
 </arguments>
-<status status="PASS" starttime="20190218 11:36:37.955" endtime="20190218 11:36:37.957"></status>
+<status status="PASS" starttime="20190218 18:43:23.418" endtime="20190218 18:43:23.420"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.441" endtime="20190218 11:36:37.957"></status>
+<status status="PASS" starttime="20190218 18:43:23.168" endtime="20190218 18:43:23.420"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:37.306" endtime="20190218 11:36:37.958"></status>
+<status status="PASS" starttime="20190218 18:43:20.333" endtime="20190218 18:43:23.420"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:21.407" endtime="20190218 11:36:37.958"></status>
+<status status="PASS" starttime="20190218 18:43:00.583" endtime="20190218 18:43:23.420"></status>
 </kw>
-<status status="PASS" starttime="20190218 11:36:21.405" endtime="20190218 11:36:37.959" critical="yes"></status>
+<kw name="打开菜单项" library="cheetah_business_keyword_resource">
+<arguments>
+<arg>系统配置</arg>
+<arg>IP分组管理</arg>
+</arguments>
+<kw name="展开菜单" library="cheetah_element_keyword_resource">
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>猎豹主页</arg>
+<arg>sc_icon</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190218 18:43:23.425" level="INFO">${name} = //*[@class="icon iconfont icon-r-set"]</msg>
+<status status="PASS" starttime="20190218 18:43:23.424" endtime="20190218 18:43:23.426"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:23.427" level="INFO">Clicking element '//*[@class="icon iconfont icon-r-set"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:23.426" endtime="20190218 18:43:25.936"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:23.422" endtime="20190218 18:43:25.936"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:23.422" endtime="20190218 18:43:25.937"></status>
+</kw>
+<kw name="打开目录" library="cheetah_element_keyword_resource">
+<arguments>
+<arg>${parent_node}</arg>
+</arguments>
+<kw name="点击查找指定元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>div</arg>
+<arg>${str_name}</arg>
+</arguments>
+<kw name="Get Common Search" library="riil_helper">
+<arguments>
+<arg>${search_type}</arg>
+<arg>${search_name}</arg>
+</arguments>
+<assign>
+<var>${button_name}</var>
+</assign>
+<msg timestamp="20190218 18:43:25.940" level="INFO">//div[contains(text(), '系统配置')]</msg>
+<msg timestamp="20190218 18:43:25.940" level="INFO">${button_name} = //div[contains(text(), '系统配置')]</msg>
+<status status="PASS" starttime="20190218 18:43:25.939" endtime="20190218 18:43:25.941"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${button_name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:25.941" level="INFO">Clicking element '//div[contains(text(), '系统配置')]'.</msg>
+<status status="PASS" starttime="20190218 18:43:25.941" endtime="20190218 18:43:26.758"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:25.938" endtime="20190218 18:43:26.758"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:25.937" endtime="20190218 18:43:26.759"></status>
+</kw>
+<kw name="打开目录" library="cheetah_element_keyword_resource">
+<arguments>
+<arg>${child_node}</arg>
+</arguments>
+<kw name="点击查找指定元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>div</arg>
+<arg>${str_name}</arg>
+</arguments>
+<kw name="Get Common Search" library="riil_helper">
+<arguments>
+<arg>${search_type}</arg>
+<arg>${search_name}</arg>
+</arguments>
+<assign>
+<var>${button_name}</var>
+</assign>
+<msg timestamp="20190218 18:43:26.763" level="INFO">//div[contains(text(), 'IP分组管理')]</msg>
+<msg timestamp="20190218 18:43:26.763" level="INFO">${button_name} = //div[contains(text(), 'IP分组管理')]</msg>
+<status status="PASS" starttime="20190218 18:43:26.761" endtime="20190218 18:43:26.763"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${button_name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:26.764" level="INFO">Clicking element '//div[contains(text(), 'IP分组管理')]'.</msg>
+<status status="PASS" starttime="20190218 18:43:26.763" endtime="20190218 18:43:27.522"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:26.760" endtime="20190218 18:43:27.523"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:26.759" endtime="20190218 18:43:27.523"></status>
+</kw>
+<kw name="等待" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190218 18:43:29.526" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190218 18:43:27.524" endtime="20190218 18:43:29.526"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:27.523" endtime="20190218 18:43:29.527"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:23.421" endtime="20190218 18:43:29.528"></status>
+</kw>
+<kw name="新建" library="cheetah_element_keyword_resource">
+<kw name="点击按钮" library="riil_common_keyword_resource">
+<arguments>
+<arg>通用</arg>
+<arg>add_button</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190218 18:43:29.533" level="INFO">${name} = //*[@class="ant-btn business-add-button popover-flag ant-btn-icon-only"]</msg>
+<status status="PASS" starttime="20190218 18:43:29.531" endtime="20190218 18:43:29.533"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:29.534" level="INFO">Clicking button '//*[@class="ant-btn business-add-button popover-flag ant-btn-icon-only"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:29.533" endtime="20190218 18:43:30.493"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:29.530" endtime="20190218 18:43:30.494"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:29.529" endtime="20190218 18:43:30.494"></status>
+</kw>
+<kw name="输入基本信息" library="cheetah_business_keyword_resource">
+<kw name="输入名称" library="cheetah_element_keyword_resource">
+<arguments>
+<arg>IP分组</arg>
+<arg>IP_name</arg>
+<arg>Automation testing</arg>
+</arguments>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190218 18:43:30.502" level="INFO">${name} = //span[@class="ant-form-item-children"]/input[@placeholder="请输入名称"]</msg>
+<status status="PASS" starttime="20190218 18:43:30.500" endtime="20190218 18:43:30.503"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:30.504" level="INFO">Clicking element '//span[@class="ant-form-item-children"]/input[@placeholder="请输入名称"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:30.503" endtime="20190218 18:43:31.448"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:30.498" endtime="20190218 18:43:31.449"></status>
+</kw>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190218 18:43:31.453" level="INFO">${user} = //span[@class="ant-form-item-children"]/input[@placeholder="请输入名称"]</msg>
+<status status="PASS" starttime="20190218 18:43:31.450" endtime="20190218 18:43:31.453"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:31.455" level="INFO">Typing text 'Automation testing' into text field '//span[@class="ant-form-item-children"]/input[@placeholder="请输入名称"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:31.454" endtime="20190218 18:43:33.387"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:31.449" endtime="20190218 18:43:33.388"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:30.496" endtime="20190218 18:43:33.388"></status>
+</kw>
+<kw name="输入名称" library="cheetah_element_keyword_resource">
+<arguments>
+<arg>IP分组</arg>
+<arg>IP_address</arg>
+<arg>127.0.0.1</arg>
+</arguments>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190218 18:43:33.395" level="INFO">${name} = //span[@class="ant-form-item-children"]/textarea[@placeholder="请直接输入IP地址 可输入多条"]</msg>
+<status status="PASS" starttime="20190218 18:43:33.392" endtime="20190218 18:43:33.395"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:33.396" level="INFO">Clicking element '//span[@class="ant-form-item-children"]/textarea[@placeholder="请直接输入IP地址 可输入多条"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:33.395" endtime="20190218 18:43:33.909"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:33.390" endtime="20190218 18:43:33.909"></status>
+</kw>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190218 18:43:33.914" level="INFO">${user} = //span[@class="ant-form-item-children"]/textarea[@placeholder="请直接输入IP地址 可输入多条"]</msg>
+<status status="PASS" starttime="20190218 18:43:33.912" endtime="20190218 18:43:33.914"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:33.915" level="INFO">Typing text '127.0.0.1' into text field '//span[@class="ant-form-item-children"]/textarea[@placeholder="请直接输入IP地址 可输入多条"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:33.915" endtime="20190218 18:43:35.258"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:33.910" endtime="20190218 18:43:35.258"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:33.388" endtime="20190218 18:43:35.258"></status>
+</kw>
+<kw name="保存按钮" library="cheetah_element_keyword_resource">
+<kw name="点击按钮" library="riil_common_keyword_resource">
+<arguments>
+<arg>通用</arg>
+<arg>save_button</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>cheetah</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190218 18:43:35.262" level="INFO">${name} = //*[@class="ant-btn ant-btn-primary ant-btn-lg"]</msg>
+<status status="PASS" starttime="20190218 18:43:35.260" endtime="20190218 18:43:35.262"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190218 18:43:35.263" level="INFO">Clicking button '//*[@class="ant-btn ant-btn-primary ant-btn-lg"]'.</msg>
+<status status="PASS" starttime="20190218 18:43:35.262" endtime="20190218 18:43:36.116"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:35.259" endtime="20190218 18:43:36.117"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:35.259" endtime="20190218 18:43:36.118"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:30.495" endtime="20190218 18:43:36.119"></status>
+</kw>
+<status status="PASS" starttime="20190218 18:43:00.582" endtime="20190218 18:43:36.119" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190218 11:36:21.040" endtime="20190218 11:36:37.962"></status>
+<status status="PASS" starttime="20190218 18:43:00.248" endtime="20190218 18:43:36.133"></status>
 </suite>
-<status status="PASS" starttime="20190218 11:36:20.994" endtime="20190218 11:36:37.969"></status>
+<status status="PASS" starttime="20190218 18:43:00.204" endtime="20190218 18:43:36.139"></status>
 </suite>
 <statistics>
 <total>

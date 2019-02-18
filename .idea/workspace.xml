@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87eeb42f-554d-425d-9b34-617c55530e69" name="Default Changelist" comment="" />
+    <list default="true" id="87eeb42f-554d-425d-9b34-617c55530e69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cheetah_element_xpath.conf" beforeDir="false" afterPath="$PROJECT_DIR$/data/cheetah_element_xpath.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" beforeDir="false" afterPath="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/riil_helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/riil_helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/results/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" beforeDir="false" afterPath="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="RIIL_automation_testing_base_on_robot_framework" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="75">
+              <caret line="5" column="5" selection-start-line="5" selection-end-line="5" selection-end-column="6" />
               <folding>
                 <element signature="e#0#115#0" expanded="true" />
               </folding>
@@ -22,16 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/cheetah_element_xpath.conf">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="38" />
+            <state relative-caret-position="164">
+              <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#104#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="675">
+              <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -49,24 +70,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/riil_helper.py">
+        <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <element signature="e#15#34#0" expanded="true" />
+                <element signature="e#0#89#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
+        <entry file="file://$PROJECT_DIR$/lib/riil_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="270">
+              <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding>
-                <element signature="e#0#89#0" expanded="true" />
+                <element signature="e#15#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,18 +101,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" />
-        <option value="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" />
-        <option value="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" />
         <option value="$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot" />
         <option value="$PROJECT_DIR$/lib/riil_helper.py" />
+        <option value="$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt" />
+        <option value="$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt" />
+        <option value="$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt" />
+        <option value="$PROJECT_DIR$/data/cheetah_element_xpath.conf" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1366" />
-    <option name="height" value="680" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -126,27 +147,6 @@
               <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
               <item name="testcases" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
-              <item name="testcases" type="462c0819:PsiDirectoryNode" />
-              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
-              <item name="testcases" type="462c0819:PsiDirectoryNode" />
-              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
-              <item name="系统配置" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RIIL_automation_testing_base_on_robot_framework" type="462c0819:PsiDirectoryNode" />
-              <item name="testcases" type="462c0819:PsiDirectoryNode" />
-              <item name="cheetah" type="462c0819:PsiDirectoryNode" />
-              <item name="系统配置" type="462c0819:PsiDirectoryNode" />
-              <item name="IP分组管理" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -159,6 +159,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testcases/relax" />
+      <recent name="$PROJECT_DIR$/testcases/bmc" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -182,19 +188,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550460603886</updated>
-      <workItem from="1550460607792" duration="744000" />
+      <workItem from="1550460607792" duration="15357000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1550461770721</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550461770721</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <created>1550461961539</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550461961539</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="744000" />
+    <option name="totallyTimeSpent" value="15357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1366" height="680" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3081571" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" sideWeight="0.50127226" side_tool="true" weight="0.22280967" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49900597" weight="0.19108762" />
+      <window_info id="Structure" order="1" sideWeight="0.500994" side_tool="true" weight="0.19108762" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
@@ -202,8 +224,8 @@
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32935154" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32902297" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27586207" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -218,54 +240,84 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#89#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/testcases/relax/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="38" />
+    <entry file="file://$PROJECT_DIR$/testcases/bmc/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/cheetah_element_xpath.conf">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/riil_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="270">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
             <element signature="e#15#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/keywords/cheetah_business_keyword_resource.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keywords/riil_common_keyword_resource.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/keywords/cheetah_element_keyword_resource.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testcases/cheetah/系统配置/IP分组管理/验证添加IP分组_633799.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="75">
+          <caret line="5" column="5" selection-start-line="5" selection-end-line="5" selection-end-column="6" />
           <folding>
             <element signature="e#0#115#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cheetah_element_xpath.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
         </state>
       </provider>
     </entry>

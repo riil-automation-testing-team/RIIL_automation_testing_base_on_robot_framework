@@ -7,10 +7,19 @@ Resource  riil_common_keyword_resource.txt
 登录猎豹
     [Arguments]  ${username}  ${password}
     打开浏览器
-    等待
+    隐式等待
     登录名称    ${username}
     登录密码    ${password}
-    登录
+    登录按钮
 
-菜单
-    [Arguments]
+打开菜单项
+    [Arguments]  ${parent_node}   ${child_node}
+    展开菜单
+    打开目录    ${parent_node}
+    打开目录    ${child_node}
+    等待
+
+输入基本信息
+    输入名称    IP分组    IP_name     Automation testing
+    输入名称    IP分组    IP_address     127.0.0.1
+    保存按钮
