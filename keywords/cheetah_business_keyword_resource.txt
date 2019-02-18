@@ -1,0 +1,16 @@
+*** Settings ***
+Resource  cheetah_element_keyword_resource.txt
+Resource  riil_common_keyword_resource.txt
+
+*** Keywords ***
+
+登录猎豹
+    [Arguments]  ${username}  ${password}
+    打开浏览器
+    等待
+    登录名称    ${username}
+    登录密码    ${password}
+    登录
+
+菜单
+    [Arguments]

@@ -1,0 +1,43 @@
+*** Settings ***
+Library  Selenium2Library
+Library  ../lib/riil_helper.py
+
+*** Keywords ***
+
+校验字符串
+    [Arguments]    ${section}  ${xpath_name}  ${str}
+    ${s}  get_xpath  ${section}  ${xpath_name}
+    ${fullstr}  get text  ${s}
+    should contain  ${fullstr}  ${str}
+
+等待
+    set browser implicit wait  5
+#
+#悬浮
+#    [Arguments]  {elenment_locale}
+#    mouse over  {elenment_locale}
+
+查找元素
+    [Arguments]   ${search_type}   ${search_name}
+    ${button_name}  get common search  ${search_type}   ${search_name}
+    click element   ${button_name}
+
+点击按钮
+    [Arguments]  ${section}  ${xpath_name}
+    ${name}  get_xpath  ${section}  ${xpath_name}
+    click button   ${name}
+
+点击元素
+    [Arguments]  ${section}  ${xpath_name}
+    ${name}  get_xpath  ${section}  ${xpath_name}
+    click element  ${name}
+
+输入字符串Excel版
+    [Arguments]   ${str_xpath}   ${str_name}
+    ${user}  get data from excel  ${str_xpath}
+    input text  ${user}  ${str_name}
+
+输入字符串
+    [Arguments]   ${section}  ${xpath_name}  ${str_name}
+    ${user}  get_xpath  ${section}  ${xpath_name}
+    input text  ${user}  ${str_name}

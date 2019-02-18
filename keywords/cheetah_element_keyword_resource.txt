@@ -1,0 +1,30 @@
+*** Settings ***
+Library  Selenium2Library
+Library  ../lib/riil_helper.py
+Resource  riil_common_keyword_resource.txt
+
+*** Keywords ***
+
+打开浏览器
+    ${url}  get_xpath  login_page  cheetah
+    Open Browser   ${url}  chrome
+    MAXIMIZE BROWSER WINDOW
+
+关闭浏览器
+    close browser
+
+登录名称
+    [Arguments]  ${str_name}
+    输入字符串  login_page  username  ${str_name}
+
+登录密码
+    [Arguments]  ${str_name}
+    输入字符串  login_page  password  ${str_name}
+
+登录
+    点击按钮  login_page  login_button
+    等待
+    校验字符串  cheetah_homepage  admin_name  系统管理员
+
+
+
