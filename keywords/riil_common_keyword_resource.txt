@@ -2,24 +2,30 @@
 Library  Selenium2Library
 Library  ../lib/riil_helper.py
 
+*** Variables ***
+
+
 *** Keywords ***
 
 校验字符串
-    [Arguments]    ${section}  ${xpath_name}  ${str}
-    ${s}  get_xpath  ${section}  ${xpath_name}  cheetah
-    ${fullstr}  get text  ${s}
+    [Arguments]    ${search_type}  ${search_name}  ${str}
+    ${element_name}  get common search  ${search_type}   ${search_name}
+    ${fullstr}  get text  ${element_name}
     should contain  ${fullstr}  ${str}
 
 隐式等待
     set browser implicit wait  10
 
-等待
+等待 2s
     sleep  2
+
+等待 5s
+    sleep  5
 
 悬浮
     [Arguments]  ${section}  ${xpath_name}
     ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
-    mouse over  {elenment_locale}
+    mouse over  ${name}
 
 点击查找指定元素
     [Arguments]   ${search_type}   ${search_name}
@@ -45,3 +51,9 @@ Library  ../lib/riil_helper.py
     [Arguments]   ${section}  ${xpath_name}  ${str_name}
     ${user}  get_xpath  ${section}  ${xpath_name}   cheetah
     input text  ${user}  ${str_name}
+
+按键
+    [Arguments]   ${section}  ${xpath_name}  ${keyboard_name}
+    ${user}  get_xpath  ${section}  ${xpath_name}   cheetah
+    press keys  ${user}  ${keyboard_name}
+

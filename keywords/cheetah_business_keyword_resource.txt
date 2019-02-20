@@ -17,9 +17,20 @@ Resource  riil_common_keyword_resource.txt
     展开菜单
     打开目录    ${parent_node}
     打开目录    ${child_node}
-    等待
+    等待 2s
 
-输入基本信息
-    输入名称    IP分组    IP_name     Automation testing
-    输入名称    IP分组    IP_address     127.0.0.1
-    保存按钮
+校验IP基本信息
+#    输入名称    IP分组    IP_name     Automation testing
+#    输入名称    IP分组    IP_address     127.0.0.1
+#    保存按钮
+    输入空名称    IP分组    IP_name
+    输入空地址    IP分组    IP_address
+    输入多空格名称     IP分组    IP_name
+    输入名称使用特殊字符  IP分组    IP_name     自动化测试IP组&quot;
+
+添加IP分组
+    新建
+
+校验IP基础信息标题
+    [Arguments]  ${str}
+    校验字符串   div     添加IP分组      ${str}
