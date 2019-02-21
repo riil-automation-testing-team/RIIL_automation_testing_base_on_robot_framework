@@ -1,6 +1,7 @@
 # coding=utf-8
 import configparser
 import xlrd
+import sys
 
 
 def get_data_from_excel(url):
@@ -29,6 +30,7 @@ def get_xpath(section, name, product):
 def get_common_search(search_type, search_element_name):
     print("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
     return str("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
+
 
 # if __name__ == '__main__':
 #     print(get_data_from_excel())

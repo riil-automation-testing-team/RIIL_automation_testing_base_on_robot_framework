@@ -20,16 +20,13 @@ Resource  riil_common_keyword_resource.txt
     等待 2s
 
 校验IP基本信息
-#    输入名称    IP分组    IP_name     Automation testing
-#    输入名称    IP分组    IP_address     127.0.0.1
-#    保存按钮
     输入空名称    IP分组    IP_name
     输入空地址    IP分组    IP_address
     输入多空格名称     IP分组    IP_name
-    输入名称使用特殊字符  IP分组    IP_name     自动化测试IP组&quot;
-
-添加IP分组
-    新建
+    校验输入字符串  IP分组    IP_name     自动化测试IP组&quot;  不能输入特殊字符
+    校验输入字符串  IP分组    IP_name     '&quot;%()/\:?<"";|&@#*   名称长度，不能超过20
+    合法名称IP地址为空  IP分组    IP_name   Automation testing
+    输入已存在IP分组名称  IP分组    IP_name   IP_address    Automation testing   172.17.161.1/24\n172.17.163.98\n172.17.161.1-172.17.161.200
 
 校验IP基础信息标题
     [Arguments]  ${str}
