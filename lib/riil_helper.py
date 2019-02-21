@@ -1,7 +1,6 @@
 # coding=utf-8
 import configparser
 import xlrd
-import sys
 
 
 def get_data_from_excel(url):

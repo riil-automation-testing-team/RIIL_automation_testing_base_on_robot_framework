@@ -2,9 +2,6 @@
 Library  Selenium2Library
 Library  ../lib/riil_helper.py
 
-*** Variables ***
-
-
 *** Keywords ***
 
 校验字符串

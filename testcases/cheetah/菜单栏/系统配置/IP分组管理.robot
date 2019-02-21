@@ -8,5 +8,4 @@ Test Setup        登录猎豹  admin  admin123
 添加IP分组_633799
     When 打开菜单项  系统配置  IP分组管理
     and 添加IP分组
-    Then 校验IP基础信息标题  添加IP分组
-    When 校验IP基本信息
+    Then 校验IP基本信息

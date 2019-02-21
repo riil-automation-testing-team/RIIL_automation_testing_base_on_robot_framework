@@ -31,3 +31,28 @@ Resource  riil_common_keyword_resource.txt
 校验IP基础信息标题
     [Arguments]  ${str}
     校验字符串   div     添加IP分组      ${str}
+
+输入合法IP分组名称和地址
+    [Arguments]  ${section}  ${xpath_name}  ${xpath_address}  ${name}  ${address}
+    添加IP分组
+    输入名称   ${section}  ${xpath_name}  ${name}
+    输入名称   ${section}  ${xpath_address}  ${address}
+    保存按钮
+    等待 2s
+
+输入已存在IP分组名称
+    [Arguments]  ${section}  ${xpath_name}  ${xpath_address}   ${name}  ${address}
+    输入合法IP分组名称和地址   ${section}  ${xpath_name}  ${xpath_address}   ${name}   ${address}
+    添加IP分组
+    输入名称   ${section}  ${xpath_name}  ${name}
+    按键   ${section}  ${xpath_name}   TAB
+    等待 2s
+    校验字符串   div   已存在    已存在
+
+合法名称IP地址为空
+    [Arguments]     ${section}  ${xpath_name}  ${name}
+    输入名称    ${section}  ${xpath_name}  ${name}
+    保存按钮
+    校验字符串   div   请输入IP地址     请输入IP地址
+
+验证头部基础信息

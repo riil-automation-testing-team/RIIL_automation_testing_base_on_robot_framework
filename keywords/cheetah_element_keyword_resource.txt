@@ -1,10 +1,8 @@
+# coding=utf-8
 *** Settings ***
 Library  Selenium2Library
 Library  ../lib/riil_helper.py
 Resource  riil_common_keyword_resource.txt
-
-*** Variables ***
-
 
 *** Keywords ***
 
@@ -40,6 +38,7 @@ Resource  riil_common_keyword_resource.txt
 添加IP分组
     点击按钮  通用    add_button
     等待 2s
+    校验IP基础信息标题  添加IP分组
 
 输入名称
     [Arguments]  ${section}  ${xpath_name}  ${str_name}
@@ -76,27 +75,4 @@ Resource  riil_common_keyword_resource.txt
     按键  ${section}  ${xpath_name}   TAB
     校验字符串   div   ${verify_str}     ${verify_str}
 
-输入合法IP分组名称和地址
-    [Arguments]  ${section}  ${xpath_name}  ${xpath_address}  ${name}  ${address}
-    添加IP分组
-    输入名称   ${section}  ${xpath_name}  ${name}
-    输入名称   ${section}  ${xpath_address}  ${address}
-    保存按钮
-    等待 2s
 
-输入已存在IP分组名称
-    [Arguments]  ${section}  ${xpath_name}  ${xpath_address}   ${name}  ${address}
-    输入合法IP分组名称和地址   ${section}  ${xpath_name}  ${xpath_address}   ${name}   ${address}
-    添加IP分组
-    输入名称   ${section}  ${xpath_name}  ${name}
-    按键   ${section}  ${xpath_name}   TAB
-    等待 2s
-    校验字符串   div   已存在    已存在
-
-合法名称IP地址为空
-    [Arguments]     ${section}  ${xpath_name}  ${name}
-    输入名称    ${section}  ${xpath_name}  ${name}
-    保存按钮
-    校验字符串   div   请输入IP地址     请输入IP地址
-
-验证头部基础信息
