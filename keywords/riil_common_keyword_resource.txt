@@ -8,7 +8,6 @@ Library  ../lib/riil_helper.py
     [Arguments]    ${search_type}  ${search_name}
     ${element_name}  get common search  ${search_type}   ${search_name}
     ${fullstr}  get text  ${element_name}
-#    should contain  ${fullstr}  ${search_name}
     should be equal  ${fullstr}  ${search_name}
 
 隐式等待
