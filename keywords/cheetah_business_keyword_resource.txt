@@ -14,12 +14,13 @@ Resource  riil_common_keyword_resource.txt
 
 打开菜单项
     [Arguments]  ${parent_node}   ${child_node}
+    隐式等待
     展开菜单
     打开目录    ${parent_node}
     打开目录    ${child_node}
     等待 2s
 
-校验IP基本信息
+编辑IP基本信息
     输入空名称    IP分组    IP_name
     输入空地址    IP分组    IP_address
     输入多空格名称     IP分组    IP_name
@@ -28,6 +29,20 @@ Resource  riil_common_keyword_resource.txt
     合法名称IP地址为空  IP分组    IP_name   Automation testing
     输入已存在IP分组名称  IP分组    IP_name   IP_address    Automation testing   172.17.161.1/24\n172.17.163.98\n172.17.161.1-172.17.161.200
 
-校验IP基础信息标题
-    [Arguments]  ${str}
-    校验字符串   div     添加IP分组      ${str}
+校验头部基础信息
+    点击查找指定元素    div     Automation testing
+    等待 2s
+    校验字符串   div      Automation testing
+    校验字符串   span     资源类型：
+    校验字符串   span     资源归属：
+    校验字符串   span     来源：
+    校验字符串   span     创建时间：
+    校验字符串   span     更新时间：
+    校验字符串   span     创建人：
+    校验字符串   div      属性信息
+    校验字符串   div      关系
+    校验字符串   span     基本信息
+
+添加关系拓扑
+    点击查找指定元素    div      关系
+    点击按钮

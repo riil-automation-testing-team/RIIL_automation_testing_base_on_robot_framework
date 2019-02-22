@@ -8,10 +8,10 @@ Library  ../lib/riil_helper.py
 *** Keywords ***
 
 校验字符串
-    [Arguments]    ${search_type}  ${search_name}  ${str}
+    [Arguments]    ${search_type}  ${search_name}
     ${element_name}  get common search  ${search_type}   ${search_name}
     ${fullstr}  get text  ${element_name}
-    should contain  ${fullstr}  ${str}
+    should contain  ${fullstr}  ${search_name}
 
 隐式等待
     set browser implicit wait  10
@@ -23,8 +23,8 @@ Library  ../lib/riil_helper.py
     sleep  5
 
 悬浮
-    [Arguments]  ${section}  ${xpath_name}
-    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
+    [Arguments]  ${section}  ${xpath_name}  ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     mouse over  ${name}
 
 点击查找指定元素
@@ -33,13 +33,13 @@ Library  ../lib/riil_helper.py
     click element   ${button_name}
 
 点击按钮
-    [Arguments]  ${section}  ${xpath_name}
-    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
+    [Arguments]  ${section}  ${xpath_name}  ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     click button   ${name}
 
 点击元素
-    [Arguments]  ${section}  ${xpath_name}
-    ${name}  get_xpath  ${section}  ${xpath_name}   cheetah
+    [Arguments]  ${section}  ${xpath_name}  ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     click element  ${name}
 
 输入字符串Excel版
@@ -48,12 +48,12 @@ Library  ../lib/riil_helper.py
     input text  ${user}  ${str_name}
 
 输入字符串
-    [Arguments]   ${section}  ${xpath_name}  ${str_name}
-    ${user}  get_xpath  ${section}  ${xpath_name}   cheetah
+    [Arguments]   ${section}  ${xpath_name}  ${str_name}    ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     input text  ${user}  ${str_name}
 
 按键
-    [Arguments]   ${section}  ${xpath_name}  ${keyboard_name}
-    ${user}  get_xpath  ${section}  ${xpath_name}   cheetah
+    [Arguments]   ${section}  ${xpath_name}  ${keyboard_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     press keys  ${user}  ${keyboard_name}
 

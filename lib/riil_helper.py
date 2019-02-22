@@ -1,7 +1,6 @@
 # coding=utf-8
 import configparser
 import xlrd
-import sys
 
 
 def get_data_from_excel(url):
@@ -23,6 +22,8 @@ def get_xpath(section, name, product):
         cf.read(u'../../../../data/cheetah_element_xpath.conf')
     elif product == 'relax':
         cf.read(u'../../../../data/relax_element_xpath.conf')
+    else:
+        cf.read(u'../../../../data/bmc_element_xpath.conf')
     # print(cf.get(section, name))
     return cf.get(section, name)
 

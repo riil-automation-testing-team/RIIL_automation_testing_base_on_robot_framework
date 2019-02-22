@@ -19,62 +19,63 @@ Resource  riil_common_keyword_resource.txt
 
 登录名称
     [Arguments]  ${str_name}
-    输入字符串  登录页  username  ${str_name}
+    输入字符串  登录页  username  ${str_name}   cheetah
 
 登录密码
     [Arguments]  ${str_name}
-    输入字符串  登录页  password  ${str_name}
+    输入字符串  登录页  password  ${str_name}   cheetah
 
 登录按钮
-    点击按钮  登录页  login_button
+    点击按钮  登录页  login_button   cheetah
     等待 2s
-    校验字符串   span    系统管理员   系统管理员
+    校验字符串   span    系统管理员
 
 展开菜单
-    点击元素  猎豹主页   sc_icon
+    点击元素  猎豹主页   sc_icon    cheetah
 
 打开目录
     [Arguments]  ${str_name}
     点击查找指定元素   div   ${str_name}
 
 添加IP分组
-    点击按钮  通用    add_button
+    点击按钮  通用    add_button  cheetah
     等待 2s
+    校验字符串   div     添加IP分组
 
 输入名称
     [Arguments]  ${section}  ${xpath_name}  ${str_name}
-    点击元素    ${section}  ${xpath_name}
-    输入字符串   ${section}  ${xpath_name}  ${str_name}
+    点击元素    ${section}  ${xpath_name}   cheetah
+    输入字符串   ${section}  ${xpath_name}  ${str_name}  cheetah
 
 保存按钮
-    点击按钮  通用  save_button
+    点击按钮  通用  save_button   cheetah
 
 输入空名称
     [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}
-    按键  ${section}  ${xpath_name}   TAB
-    校验字符串   div   请输入名称     请输入名称
+    点击元素    ${section}  ${xpath_name}   cheetah
+    按键  ${section}  ${xpath_name}   TAB     cheetah
+    校验字符串   div   请输入名称
 
 输入空地址
     [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}
-    按键  ${section}  ${xpath_name}   TAB
-    校验字符串   div   请输入IP地址     请输入IP地址
+    点击元素    ${section}  ${xpath_name}   cheetah
+    按键  ${section}  ${xpath_name}   TAB     cheetah
+    校验字符串   div   请输入IP地址
 
 输入多空格名称
     [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}
-    按键  ${section}  ${xpath_name}   SPACE
-    按键  ${section}  ${xpath_name}   SPACE
-    按键  ${section}  ${xpath_name}   SPACE
-    按键  ${section}  ${xpath_name}   TAB
-    校验字符串   div   不能输入空字符     不能输入空字符
+    点击元素    ${section}  ${xpath_name}   cheetah
+    按键  ${section}  ${xpath_name}   SPACE   cheetah
+    按键  ${section}  ${xpath_name}   SPACE   cheetah
+    按键  ${section}  ${xpath_name}   SPACE   cheetah
+    按键  ${section}  ${xpath_name}   TAB     cheetah
+    校验字符串   div   不能输入空字符
 
 校验输入字符串
     [Arguments]  ${section}  ${xpath_name}  ${str_name}  ${verify_str}
     输入名称   ${section}  ${xpath_name}  ${str_name}
-    按键  ${section}  ${xpath_name}   TAB
-    校验字符串   div   ${verify_str}     ${verify_str}
+    按键  ${section}  ${xpath_name}   TAB     cheetah
+    校验字符串   div   ${verify_str}
 
 输入合法IP分组名称和地址
     [Arguments]  ${section}  ${xpath_name}  ${xpath_address}  ${name}  ${address}
@@ -89,14 +90,15 @@ Resource  riil_common_keyword_resource.txt
     输入合法IP分组名称和地址   ${section}  ${xpath_name}  ${xpath_address}   ${name}   ${address}
     添加IP分组
     输入名称   ${section}  ${xpath_name}  ${name}
-    按键   ${section}  ${xpath_name}   TAB
+    按键   ${section}  ${xpath_name}   TAB    cheetah
     等待 2s
-    校验字符串   div   已存在    已存在
+    校验字符串   div   已存在
 
 合法名称IP地址为空
     [Arguments]     ${section}  ${xpath_name}  ${name}
     输入名称    ${section}  ${xpath_name}  ${name}
     保存按钮
-    校验字符串   div   请输入IP地址     请输入IP地址
+    校验字符串   div   请输入IP地址
 
-验证头部基础信息
+
+
