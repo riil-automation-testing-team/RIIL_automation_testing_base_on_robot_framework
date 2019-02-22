@@ -2,6 +2,7 @@
 Resource  cheetah_element_keyword_resource.txt
 Resource  riil_common_keyword_resource.txt
 
+
 *** Keywords ***
 
 登录猎豹
@@ -16,6 +17,7 @@ Resource  riil_common_keyword_resource.txt
     [Arguments]  ${parent_node}   ${child_node}
     隐式等待
     展开菜单
+    等待 2s
     打开目录    ${parent_node}
     打开目录    ${child_node}
     等待 2s
@@ -26,11 +28,11 @@ Resource  riil_common_keyword_resource.txt
     输入多空格名称     IP分组    IP_name
     校验输入字符串  IP分组    IP_name     自动化测试IP组&quot;  不能输入特殊字符
     校验输入字符串  IP分组    IP_name     '&quot;%()/\:?<"";|&@#*   名称长度，不能超过20
-    合法名称IP地址为空  IP分组    IP_name   Automation testing
-    输入已存在IP分组名称  IP分组    IP_name   IP_address    Automation testing   172.17.161.1/24\n172.17.163.98\n172.17.161.1-172.17.161.200
+    合法名称IP地址为空  IP分组    IP_name   Automation testing    已存在
+    合法名称IP地址为空  IP分组    IP_name   cheetah testing    请输入IP地址
 
 校验头部基础信息
-    点击查找指定元素    div     Automation testing
+    点击已存在IP分组   Automation testing
     等待 2s
     校验字符串   div      Automation testing
     校验字符串   span     资源类型：
@@ -43,6 +45,16 @@ Resource  riil_common_keyword_resource.txt
     校验字符串   div      关系
     校验字符串   span     基本信息
 
-添加关系拓扑
-    点击查找指定元素    div      关系
-    点击按钮
+添加合法IP分组名称和地址
+    添加IP分组
+    输入名称   IP分组  IP_name  Automation testing
+    输入名称   IP分组  IP_address  172.17.161.1/24\n172.17.163.98\n172.17.161.1-172.17.161.200
+    保存按钮
+    等待 2s
+
+删除已存在IP分组
+    悬浮Search   div   Automation testing
+    悬浮Xpath    通用   move_to_delete_icon    cheetah
+    点击按钮    通用  delete_icon     cheetah
+    点击按钮    通用  ok_button     cheetah
+

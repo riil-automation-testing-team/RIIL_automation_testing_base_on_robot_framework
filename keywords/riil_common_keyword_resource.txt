@@ -8,7 +8,8 @@ Library  ../lib/riil_helper.py
     [Arguments]    ${search_type}  ${search_name}
     ${element_name}  get common search  ${search_type}   ${search_name}
     ${fullstr}  get text  ${element_name}
-    should contain  ${fullstr}  ${search_name}
+#    should contain  ${fullstr}  ${search_name}
+    should be equal  ${fullstr}  ${search_name}
 
 隐式等待
     set browser implicit wait  10
@@ -19,9 +20,14 @@ Library  ../lib/riil_helper.py
 等待 5s
     sleep  5
 
-悬浮
-    [Arguments]  ${section}  ${xpath_name}  ${product}
+悬浮Xpath
+    [Arguments]  ${section}  ${xpath_name}   ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    mouse over  ${name}
+
+悬浮Search
+    [Arguments]  ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
     mouse over  ${name}
 
 点击查找指定元素
@@ -54,3 +60,6 @@ Library  ../lib/riil_helper.py
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     press keys  ${user}  ${keyboard_name}
 
+验证字符串不存在
+    [Arguments]    ${str}
+    PAGE SHOULD NOT CONTAIN   ${str}
