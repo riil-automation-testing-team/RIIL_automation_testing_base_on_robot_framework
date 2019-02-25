@@ -78,13 +78,6 @@ Resource  riil_common_keyword_resource.txt
     等待 2s
     校验字符串   div   ${verify_str}
 
-添加已存在IP分组名称
-    [Arguments]  ${str_name}
-    添加IP分组
-    校验输入字符串  IP分组    IP_name   ${str_name}  已存在
-    等待 5s
-    点击按钮    通用   cancel_button   cheetah
-
 合法名称IP地址为空
     [Arguments]     ${section}  ${xpath_name}  ${name}  ${status}
     输入名称    ${section}  ${xpath_name}  ${name}
@@ -92,14 +85,35 @@ Resource  riil_common_keyword_resource.txt
     校验字符串   div   ${status}
 
 点击已存在IP分组
-    [Arguments]    ${search_name}
-    点击查找指定元素  div  ${search_name}
+    点击查找指定元素  div  Automation testing
 
-验证IP分组不存在
-    验证字符串不存在    Automation testing
+验证不存在
+    等待 2s
+    验证字符串不存在    div     Automation testing
 
+添加位置
+    点击按钮  位置管理    add_position  cheetah
+    等待 2s
+    校验字符串   div     添加位置
 
+从列表中选择上级位置
+    点击查找指定元素    span    请选择
+    等待 2s
+    点击元素    位置管理    list_item   cheetah
 
+保存添加位置
+    点击按钮    位置管理   save_button   cheetah
 
+点击已存在位置
+    点击查找指定元素  div  Automation testing
 
+校验输入已存在位置
+    [Arguments]  ${str_name}  ${verify_str}
+    输入名称   通用    IP_name   ${str_name}
+    从列表中选择上级位置
+    保存添加位置
+    等待 2s
+    校验字符串   div   ${verify_str}
 
+展开位置列表
+    点击元素  位置管理  expand_icon     cheetah

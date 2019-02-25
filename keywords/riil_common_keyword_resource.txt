@@ -60,5 +60,6 @@ Library  ../lib/riil_helper.py
     press keys  ${user}  ${keyboard_name}
 
 验证字符串不存在
-    [Arguments]    ${str}
-    PAGE SHOULD NOT CONTAIN   ${str}
+    [Arguments]  ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
+    page should not contain element  ${name}
