@@ -19,29 +19,27 @@ Library  ../lib/riil_helper.py
 等待 5s
     sleep  5
 
-悬浮Xpath
-    [Arguments]  ${section}  ${xpath_name}   ${product}
+悬浮
+    [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
-    mouse over  ${name}
-
-悬浮Search
-    [Arguments]  ${search_type}   ${search_name}
-    ${name}  get common search  ${search_type}   ${search_name}
     mouse over  ${name}
 
 点击查找指定元素
     [Arguments]   ${search_type}   ${search_name}
     ${button_name}  get common search  ${search_type}   ${search_name}
+    暂停
     click element   ${button_name}
 
 点击按钮
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
     click button   ${name}
 
 点击元素
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
     click element  ${name}
 
 输入字符串Excel版
@@ -52,6 +50,7 @@ Library  ../lib/riil_helper.py
 输入字符串
     [Arguments]   ${section}  ${xpath_name}  ${str_name}    ${product}
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
     input text  ${user}  ${str_name}
 
 按键
@@ -59,7 +58,70 @@ Library  ../lib/riil_helper.py
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     press keys  ${user}  ${keyboard_name}
 
-验证字符串不存在
-    [Arguments]  ${search_type}   ${search_name}
-    ${name}  get common search  ${search_type}   ${search_name}
-    page should not contain element  ${name}
+校验包含字符串
+    [Arguments]    ${section}  ${xpath_name}  ${str}   ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    ${fullstr}  get text  ${s}
+    log  ${fullstr}
+    Should Contain  ${fullstr}  ${str}
+
+暂停
+    sleep   1
+查找元素
+    [Arguments]   ${search_type}   ${search_name}
+    ${button_name}  get common search  ${search_type}   ${search_name}
+    click element   ${button_name}
+
+#点击按钮1
+#    [Arguments]  ${mode} ${section}  ${xpath_name}
+#    ${name}  ${mode}  ${section}  ${xpath_name}
+#    log  ${name}
+#    click button   ${name}
+
+
+#add by lijun
+显示出隐藏元素
+    [Arguments]   ${section}    ${xpath_name}   ${product}
+     ${user}  get_xpath  ${section}  ${xpath_name}  ${product}
+     log  ${user}
+     暂停
+     scroll element into view   ${user}
+
+清空输入框
+    [Arguments]  ${section}    ${xpath_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
+    Clear Element Text  ${user}
+按键操作
+    [Arguments]   ${section}    ${xpath_name}  ${key}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
+    press key  ${user}  ${key}
+刷新页面
+    reload page
+悬浮鼠标
+    [Arguments]   ${section}    ${xpath_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
+    Mouse Over  ${user}
+上传文件
+    [Arguments]   ${section}  ${xpath_name}  ${file}    ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    choose file  ${user}  ${file}
+校验空值
+    [Arguments]   ${section}    ${xpath_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    ${fullstr}  get text  ${user}
+    Should Be Empty  ${fullstr}
+
+返回元素属性  #TODO
+    [Arguments]   ${section}    ${xpath_name}    ${key}     ${str}  ${product}
+     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+     ${test}     Get Element Attribute   ${user}    ${key}
+     log     ${test}
+     Should Contain  ${test}  ${str}
+拖动元素
+    [Arguments]   ${section}    ${xpath_name1}    ${xpath_name2}     ${product}
+     ${user1}  get_xpath  ${section}  ${xpath_name1}   ${product}
+     ${user2}  get_xpath  ${section}  ${xpath_name2}   ${product}
+     Drag And Drop      ${user1}     ${user2}
