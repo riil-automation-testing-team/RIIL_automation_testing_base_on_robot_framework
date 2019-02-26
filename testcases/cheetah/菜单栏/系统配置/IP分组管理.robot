@@ -20,4 +20,4 @@ Suite Teardown  关闭浏览器
 
 删除IP分组_634101
     When 删除已存在IP分组
-    Then 验证不存在
+    Then 验证已经被删除

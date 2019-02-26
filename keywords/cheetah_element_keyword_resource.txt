@@ -1,16 +1,15 @@
 *** Settings ***
-Library  Selenium2Library
-Library  ../lib/riil_helper.py
-Resource  riil_common_keyword_resource.txt
+Library           Selenium2Library
+Library           ../lib/riil_helper.py
+Resource          riil_common_keyword_resource.txt
+Resource          cheetah_business_keyword_resource.txt
 
 *** Variables ***
 
-
 *** Keywords ***
-
 打开浏览器
-    ${url}  get_xpath  登录页  cheetah  cheetah
-    Open Browser   ${url}  chrome
+    ${url}    get_xpath    登录页    cheetah    cheetah
+    Open Browser    ${url}    chrome
     Delete All Cookies
     MAXIMIZE BROWSER WINDOW
 
@@ -18,102 +17,119 @@ Resource  riil_common_keyword_resource.txt
     close browser
 
 登录名称
-    [Arguments]  ${str_name}
-    输入字符串  登录页  username  ${str_name}   cheetah
+    [Arguments]    ${str_name}
+    输入字符串    登录页    username    ${str_name}    cheetah
 
 登录密码
-    [Arguments]  ${str_name}
-    输入字符串  登录页  password  ${str_name}   cheetah
+    [Arguments]    ${str_name}
+    输入字符串    登录页    password    ${str_name}    cheetah
 
 登录按钮
-    点击按钮  登录页  login_button   cheetah
+    点击按钮    登录页    login_button    cheetah
     等待 2s
-    校验字符串   span    系统管理员
+    校验字符串    span    系统管理员
 
 展开菜单
-    点击元素  猎豹主页   sc_icon    cheetah
+    点击元素    猎豹主页    sc_icon    cheetah
 
 打开目录
-    [Arguments]  ${str_name}
-    点击查找指定元素   div   ${str_name}
+    [Arguments]    ${parent_node}  ${child_node}
+    ${Status}   Run Keyword and return status   元素没有被显示  div  ${child_node}
+    Run Keyword If   "${Status}"=="True"   打开父子目录   ${parent_node}  ${child_node}
+    ...     ELSE    打开子目录   ${child_node}
+
+打开父子目录
+    [Arguments]    ${parent_node}  ${child_node}
+    点击查找指定元素    div    ${parent_node}
+    点击查找指定元素    div    ${child_node}
+
+打开子目录
+    [Arguments]    ${str_name}
+    点击查找指定元素    div    ${str_name}
 
 添加IP分组
-    点击按钮  通用    add_button  cheetah
+    点击按钮    通用    add_button    cheetah
     等待 2s
-    校验字符串   div     添加IP分组
+    校验字符串    div    添加IP分组
 
 输入名称
-    [Arguments]  ${section}  ${xpath_name}  ${str_name}
-    点击元素    ${section}  ${xpath_name}   cheetah
-    输入字符串   ${section}  ${xpath_name}  ${str_name}  cheetah
+    [Arguments]    ${section}    ${xpath_name}    ${str_name}
+    点击元素    ${section}    ${xpath_name}    cheetah
+    输入字符串    ${section}    ${xpath_name}    ${str_name}    cheetah
 
 保存按钮
-    点击按钮  通用  save_button   cheetah
+    点击按钮    通用    save_button    cheetah
 
 输入空名称
-    [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}   cheetah
-    按键  ${section}  ${xpath_name}   TAB     cheetah
-    校验字符串   div   请输入名称
+    [Arguments]    ${section}    ${xpath_name}
+    点击元素    ${section}    ${xpath_name}    cheetah
+    按键    ${section}    ${xpath_name}    TAB    cheetah
+    校验字符串    div    请输入名称
 
 输入空地址
-    [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}   cheetah
-    按键  ${section}  ${xpath_name}   TAB     cheetah
-    校验字符串   div   请输入IP地址
+    [Arguments]    ${section}    ${xpath_name}
+    点击元素    ${section}    ${xpath_name}    cheetah
+    按键    ${section}    ${xpath_name}    TAB    cheetah
+    校验字符串    div    请输入IP地址
 
 输入多空格名称
-    [Arguments]  ${section}  ${xpath_name}
-    点击元素    ${section}  ${xpath_name}   cheetah
-    按键  ${section}  ${xpath_name}   SPACE   cheetah
-    按键  ${section}  ${xpath_name}   SPACE   cheetah
-    按键  ${section}  ${xpath_name}   SPACE   cheetah
-    按键  ${section}  ${xpath_name}   TAB     cheetah
-    校验字符串   div   不能输入空字符
+    [Arguments]    ${section}    ${xpath_name}
+    点击元素    ${section}    ${xpath_name}    cheetah
+    按键    ${section}    ${xpath_name}    SPACE    cheetah
+    按键    ${section}    ${xpath_name}    SPACE    cheetah
+    按键    ${section}    ${xpath_name}    SPACE    cheetah
+    按键    ${section}    ${xpath_name}    TAB    cheetah
+    校验字符串    div    不能输入空字符
 
 校验输入字符串
-    [Arguments]  ${section}  ${xpath_name}  ${str_name}  ${verify_str}
-    输入名称   ${section}  ${xpath_name}  ${str_name}
-    按键  ${section}  ${xpath_name}   TAB     cheetah
+    [Arguments]    ${section}    ${xpath_name}    ${str_name}    ${verify_str}
+    输入名称    ${section}    ${xpath_name}    ${str_name}
+    按键    ${section}    ${xpath_name}    TAB    cheetah
     等待 2s
-    校验字符串   div   ${verify_str}
+    校验字符串    div    ${verify_str}
 
 合法名称IP地址为空
-    [Arguments]     ${section}  ${xpath_name}  ${name}  ${status}
-    输入名称    ${section}  ${xpath_name}  ${name}
+    [Arguments]    ${section}    ${xpath_name}    ${name}    ${status}
+    输入名称    ${section}    ${xpath_name}    ${name}
     保存按钮
-    校验字符串   div   ${status}
+    校验字符串    div    ${status}
 
 点击已存在IP分组
-    点击查找指定元素  div  Automation testing
+    点击查找指定元素    div    Automation testing
 
-验证不存在
+验证已经被删除
     等待 2s
-    验证字符串不存在    div     Automation testing
+    验证字符串不存在    span    Automation testing
+
+验证位置已经被删除
+    等待 2s
+    验证字符串不存在Xpath    位置管理    verify_string    cheetah
 
 添加位置
-    点击按钮  位置管理    add_position  cheetah
+    点击按钮    位置管理    add_position    cheetah
     等待 2s
-    校验字符串   div     添加位置
+    校验字符串    div    添加位置
 
 从列表中选择上级位置
     点击查找指定元素    span    请选择
     等待 2s
-    点击元素    位置管理    list_item   cheetah
+    点击元素    位置管理    list_item    cheetah
 
 保存添加位置
-    点击按钮    位置管理   save_button   cheetah
+    点击按钮    位置管理    save_button    cheetah
 
 点击已存在位置
-    点击查找指定元素  div  Automation testing
+    点击查找指定元素    span    Automation testing
 
 校验输入已存在位置
-    [Arguments]  ${str_name}  ${verify_str}
-    输入名称   通用    IP_name   ${str_name}
+    [Arguments]    ${str_name}    ${verify_str}
+    输入名称    通用    IP_name    ${str_name}
     从列表中选择上级位置
     保存添加位置
     等待 2s
-    校验字符串   div   ${verify_str}
+    校验字符串    div    ${verify_str}
 
 展开位置列表
-    点击元素  位置管理  expand_icon     cheetah
+    等待 2s
+    点击元素    位置管理    expand_icon    cheetah
+

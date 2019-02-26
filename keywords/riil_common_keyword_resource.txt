@@ -63,3 +63,13 @@ Library  ../lib/riil_helper.py
     [Arguments]  ${search_type}   ${search_name}
     ${name}  get common search  ${search_type}   ${search_name}
     page should not contain element  ${name}
+
+验证字符串不存在Xpath
+    [Arguments]  ${section}  ${xpath_name}   ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    page should not contain element  ${name}
+
+元素没有被显示
+    [Arguments]    ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
+    element should not be visible    ${name}
