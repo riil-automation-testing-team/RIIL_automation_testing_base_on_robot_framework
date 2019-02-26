@@ -1,0 +1,246 @@
+*** Settings ***
+Resource  relax_element_keyword_resource.txt
+Resource  riil_common_keyword_resource.txt
+Library  ../lib/riil_helper.py
+
+*** Keywords ***
+登录Relax
+    [Arguments]  ${username}  ${password}
+    暂停
+    登录名称    ${username}
+    登录密码    ${password}
+    登录
+    等待 5s
+    登录成功验证  工作台
+#TC新建一级校园旅程
+进入校园旅程新建页面   #用例Given
+    登录Relax     admin  admin
+    点击右展按钮
+    显示出隐藏元素     service_management  service_manager     relax
+    点击元素    service_management  service_manager   relax  #//span[text()='服务管理']
+    显示出隐藏元素     service_management  service_manager_title       relax
+    点击元素    service_management  service_manager_title      relax    #//span[text()='校园旅程分类']
+
+角色分类和所属角色必填项
+      角色分类和所属角色必填项第一行
+      角色分类和所属角色必填项第二行
+      角色分类和所属角色必填项第三行
+      角色分类和所属角色必填项第四行
+
+#TC新建二级校园旅程
+新建二级角色分类学生分类关联的角色为学生
+    新建一级关联学生
+    sleep   2
+    新建二级校园旅程
+
+#TC二级旅程可以同时关联多个服务
+进入校园旅程后台配置页面
+    进入校园旅程新建页面
+进入校园二级旅程
+    pass execution  aaa
+同时选择多个故障服务和申请服务并保存
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name     relax
+    click element  //div[@class="select2-container select2-container-multi form-control"]/ul/li[2]
+    click element  //div[text()="ZXX测试跳转"]
+    点击按钮  service_management  save_button       relax
+
+保存成功
+    pass execution  bbb
+
+#TC选择关联的服务事项时_可以搜索_加载的内容为服务事项
+有搜索框_输入名称_可以搜索到相关的选择服务事项
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name     relax
+    click element  //div[@class="select2-container select2-container-multi form-control"]/ul/li[2]      relax
+    should contain  //div[text()="ZXX测试跳转"]     ZXX测试跳转
+    click element  //div[text()="ZXX测试跳转"]
+
+为所有申请服务和故障的一级服务没有故障的子服务
+    click element  //div[@class="select2-container select2-container-multi form-control"]/ul/li[2]
+    should contain  //div[text()="ZXX测试跳转"]     ZXX测试跳转
+    input text  //input[@class="select2-input select2-default"]      不存在
+    should contain   //li[text="没有找到匹配项"]      没有找到匹配项
+
+#TC修改一级校园旅程
+修改一级角色旅程的信息
+    显示出隐藏元素     service_management  move_mouse      relax
+    点击元素  service_management  move_mouse        relax
+    点击元素  service_management  belong_role       relax
+    按键操作   service_management  belong_role  \\8     relax
+    按键操作   service_management  belong_role  \\8     relax
+    输入字符串  service_management  belong_role  值班人员        relax
+    按键操作   service_management  belong_role  \\13        relax
+    点击元素  service_management  belong_role       relax
+    输入字符串  service_management  belong_role  服务台     relax
+    按键操作   service_management  belong_role  \\13        relax
+    点击按钮  service_management  save_button       relax
+保存成功_校园旅程二级目录的所属角色自动同步_与一级目录一致
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name     relax
+    校验包含字符串  service_management     check_student   值班人员、服务台        relax
+
+#TC修改二级校园旅程_651001
+修改二级角色旅程的信息
+    显示出隐藏元素     service_management  move_mouse      relax
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name     relax
+    清空输入框    service_management  travel_name        relax
+    输入字符串   service_management  travel_name    验证修改自动化测试旅程名称        relax
+    上传文件    service_management  upload      E:\\photo.png       relax
+    校验包含字符串    service_management  two_travel_service   学生入学        relax
+    点击元素  service_management  travel_belong_role        relax
+    按键操作   service_management  travel_belong_role  \\8      relax
+    按键操作   service_management  travel_belong_role  \\8      relax
+    输入字符串  service_management  travel_belong_role  上网账号     relax
+    按键操作   service_management  travel_belong_role  \\13     relax
+    点击元素  service_management  travel_belong_role        relax
+    输入字符串  service_management  travel_belong_role  默认项目申请       relax
+    按键操作   service_management  travel_belong_role  \\13     relax
+    点击按钮  service_management  save_button       relax
+保存成功_校园旅程二级目录变更为修改后内容
+    显示出隐藏元素     service_management  move_mouse      relax
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name_modify      relax
+    校验包含字符串    service_management  two_travel_name_modify   验证修改自动化测试旅程名称       relax
+    校验包含字符串    service_management  two_travel_service_ver1   上网账号       relax
+    校验包含字符串    service_management  two_travel_service_ver2   默认项目申请     relax
+
+#TC选择关联的服务事项时_可以搜索_加载的内容为服务事项_664633
+修改一级旅程所属角色
+    显示出隐藏元素     service_management  move_mouse      relax
+    点击元素    service_management  move_mouse      relax
+    点击元素  service_management  belong_role       relax
+    按键操作   service_management  belong_role  \\8     relax
+    按键操作   service_management  belong_role  \\8     relax
+    输入字符串  service_management  belong_role  值班人员        relax
+    按键操作   service_management  belong_role  \\13        relax
+提示如您要变更所属角色需要重新选择二级旅程的服务事项
+    校验包含字符串     service_management      toast_one_level   如您要变更所属角色，需要重新选择二级旅程的服务事项！        relax
+保存修改
+    点击按钮  service_management  save_button       relax
+且其二级旅程关联的服务事项清空且一级二级的所属角色都变更修改后的内容
+    显示出隐藏元素     service_management  move_mouse      relax
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素    service_management  two_travel_name     relax
+    校验包含字符串    service_management  check_student   值班人员     relax
+    校验空值    service_management  travel_belong_role      relax
+
+
+#TC选择关联的服务事项时_可以搜索_加载的内容为服务事项_664633
+新建一级旅程
+      输入字符串   service_management  input_category_name    自动化测试学生分类一级        relax
+      点击元素  service_management  check_box_0
+      输入字符串  service_management     belong_role   学生        relax
+      按键操作   service_management     belong_role    \\13     relax
+      点击按钮  service_management  save_button     relax
+字段信息为角色分类名称_所属角色_以时间轴形式展示服务
+      显示出隐藏元素     service_management  move_mouse        relax
+      点击元素    service_management  move_mouse        relax
+      校验包含字符串    service_management  one_belong_role   学生       relax
+
+新建二级旅程
+    显示出隐藏元素     service_management  move_mouse      relax
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  add_icon        relax
+    输入字符串   service_management  travel_name    自动化测试旅程名称        relax
+    校验字符串   service_management  check_student   学生      relax
+    上传文件    service_management  upload      E:\\photo2.png      relax
+    输入字符串  service_management     travel_belong_role   学生入学     relax
+    按键操作   service_management     travel_belong_role    \\13        relax
+    点击按钮  service_management  save_button       relax
+    显示出隐藏元素     service_management  move_mouse      relax
+    点击元素    service_management  travel_name_triangle        relax
+    点击元素   service_management  two_travel_name      relax
+字段信息为旅程名称_所属角色_只读继承上级角色分类的所属角色_图标_关联的服务事项
+     校验包含字符串    service_management  two_travel_service   学生入学       relax
+
+#TC校园旅程默认按照创建时间排序最先创建在最下方_663752
+#一级旅程：教师旅程
+#一级旅程：学生旅程，二级旅程:学生办事，学生活动
+#${input_str} = 教师旅程
+#${two_input_str} = 二级旅程:学生办事，学生活动
+新建一级旅程_自动化测试教师旅程
+    新建一级旅程_带参       自动化测试教师旅程    教师
+    新建一级旅程_带参1       自动化测试学生旅程    学生
+新建二级级旅程_学生办事_学生活动
+    新建二级旅程_带参       学生办事
+    新建二级旅程_带参       学生活动
+查看校园旅程页面排序_先创建的在最下方
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    返回元素属性  service_management  student_name_path      name_path    自动化测试学生旅程       relax
+    显示出隐藏元素     service_management      move_mouse_teacher      relax
+    悬浮鼠标    service_management  move_mouse_teacher      relax
+    返回元素属性  service_management  teacher_name_path      name_path    自动化测试教师旅程       relax
+#TC校园旅程默认按照创建时间排序最先创建在最下方_663752
+新建二级级旅程_学生活动
+    新建一级旅程_带参1       自动化测试学生旅程    学生
+    新建二级级旅程_学生办事_学生活动
+二级旅程上无法新建三级旅程_只有删除操作
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    #返回元素属性  service_management  student_name_path      name_path    自动化测试学生旅程       relax
+    点击元素    service_management  travel_name_student_triangle        relax
+    悬浮鼠标    service_management  move_mouse_student_two      relax
+    返回元素属性  service_management  get_student_two      data-frame-id    deleteIcon       relax
+#TC校园旅程不支持一级分类变更为二级分类_660403
+拖动学生分类至教师分类下方
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    拖动元素    service_management      move_mouse_student      move_mouse_teacher     relax
+
+拖动失败_不支持拖动  #非同级目录不允许移动
+     校验包含字符串   service_management  toast_move_element   非同级目录不允许移动      relax
+拖动学生分类至教师分类下方空白处
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    拖动元素    service_management      move_mouse_student      move_mouse_teacher_down      relax
+#TC校园旅程可以拖动排序_652411
+拖动成功
+    暂停
+    校验包含字符串   service_management  toast_move_element_success   修改成功      relax
+    查看校园旅程页面拖动排序_后创建的在最下方
+查看校园旅程页面拖动排序_后创建的在最下方
+    显示出隐藏元素     service_management      move_mouse_teacher      relax
+    悬浮鼠标    service_management  move_mouse_teacher      relax
+    返回元素属性  service_management  teacher_name_sort_path      name_path    自动化测试教师旅程       relax
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    返回元素属性  service_management  student_name_sort_path      name_path    自动化测试学生旅程       relax
+#TC删除校园旅程_650600
+先删除二级旅程才能删除一级旅程
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    点击元素    service_management      delete_icon         relax
+    校验包含字符串   service_management  toast_delete_one_level_fail   请先删除子旅程！     relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    #点击元素    service_management  travel_name_student_triangle        relax
+    悬浮鼠标    service_management  move_mouse_student_two      relax
+    点击元素    service_management      get_student_two         relax
+    点击元素    service_management      delete_confirm      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    #点击元素    service_management  travel_name_student_triangle        relax
+    悬浮鼠标    service_management  move_mouse_student_two_second      relax
+    点击元素    service_management      delete_student_two_second         relax
+    点击元素    service_management      delete_confirm      relax
+    悬浮鼠标    service_management  move_mouse_student      relax
+    点击元素    service_management      delete_student_icon         relax
+    点击元素    service_management      delete_confirm      relax
+    暂停
+    校验包含字符串   service_management  toast_delete_success   删除成功！     relax
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+*** Settings ***
+Library  Selenium2Library
+Library  ../lib/riil_helper.py
+Resource  riil_common_keyword_resource.txt
+*** Keywords ***
+
+打开浏览器
+    ${url}  get_xpath  login_page  relax   relax
+    log  ${url}
+    Open Browser   ${url}  chrome
+    MAXIMIZE BROWSER WINDOW
+
+关闭浏览器
+    close browser
+
+登录名称
+    [Arguments]  ${str_name}
+    输入字符串  login_page  username  ${str_name}    relax
+
+登录密码
+    [Arguments]  ${str_name}
+    输入字符串  login_page  password  ${str_name}    relax
+点击登录
+    #点击按钮  login_page  login_button
+    click element  class=login
+
+登录
+    点击按钮  login_page  login_button1     relax
+
+登录成功验证
+    [Arguments]  ${str_name}
+    校验包含字符串  login_page  workspace   ${str_name}    relax
+
+点击右展按钮
+    click element  class=arrow-right
+
+点击服务管理
+    显示出隐藏元素     login_page  服务管理    relax
+    点击按钮  login_page  服务管理  relax
+
+角色分类和所属角色必填项第一行
+      输入字符串   service_management  input_category_name    自动化测试分类    relax
+      点击元素  service_management  check_box_0     relax
+      点击按钮  service_management  save_button     relax
+      校验包含字符串     service_management  role_must_tip   请选择角色   relax
+角色分类和所属角色必填项第二行
+      清空输入框    service_management  input_category_name  relax
+      刷新页面
+      输入字符串  service_management     belong_role   值班人员  relax
+      按键操作   service_management     belong_role    \\13     relax
+      点击按钮  service_management  save_button     relax
+      校验包含字符串   service_management  category_name_tip   请输入名称     relax
+角色分类和所属角色必填项第三行
+      清空输入框    service_management  input_category_name      relax
+      输入字符串   service_management  input_category_name    12345678901234567890123456789031       relax
+      点击按钮  service_management  save_button     relax
+      校验包含字符串   service_management  category_name_tip_30   最多可以输入 30 个字符      relax
+角色分类和所属角色必填项第四行
+      清空输入框    service_management  input_category_name      relax
+      输入字符串   service_management  input_category_name    自动化测试      relax
+      点击按钮  service_management  save_button     relax
+      should contain  //a[text()='自动化测试']    自动化测试      relax
+新建一级关联学生
+      输入字符串   service_management  input_category_name    自动化测试学生分类一级        relax
+      点击元素  service_management  check_box_0     relax
+      sleep     2
+      输入字符串  service_management     belong_role   学生        relax
+      按键操作   service_management     belong_role    \\13     relax
+      点击按钮  service_management  save_button     relax
+新建二级校园旅程
+        显示出隐藏元素     service_management  move_mouse      relax
+        悬浮鼠标    service_management  move_mouse      relax
+        点击元素    service_management  add_icon        relax
+        输入字符串   service_management  travel_name    自动化测试旅程名称        relax
+        #choose file   //input[@name="uploadFile"]   E:\\photo2.png
+        校验字符串   service_management  check_student   学生      relax
+        上传文件    service_management  upload      E:\\photo2.png      relax
+        输入字符串  service_management     travel_belong_role   学生入学     relax
+        按键操作   service_management     travel_belong_role    \\13        relax
+        点击按钮  service_management  save_button       relax
+        显示出隐藏元素     service_management  move_mouse      relax
+        点击元素    service_management  travel_name_triangle        relax
+        sleep   5
+        校验包含字符串   service_management  two_travel_name   自动化测试旅程名称     relax
+新建一级旅程_带参
+      [Arguments]   ${input_str}    ${str}
+      输入字符串   service_management  input_category_name    ${input_str}       relax
+      点击元素  service_management  check_box_0     relax
+      输入字符串  service_management     belong_role   ${str}       relax
+      按键操作   service_management     belong_role    \\13     relax
+      点击按钮  service_management  save_button     relax
+新建一级旅程_带参1
+      [Arguments]   ${input_str}    ${str}
+      输入字符串   service_management  input_category_name    ${input_str}       relax
+      按键操作   service_management  belong_role  \\8      relax
+      按键操作   service_management  belong_role  \\8      relax
+      输入字符串  service_management     belong_role   ${str}       relax
+      按键操作   service_management     belong_role    \\13     relax
+      点击按钮  service_management  save_button     relax
+新建二级旅程_带参
+        [Arguments]   ${two_input_str}
+        显示出隐藏元素     service_management  move_mouse_student      relax
+        悬浮鼠标    service_management  move_mouse_student      relax
+        点击元素    service_management  add_icon_student       relax
+        输入字符串   service_management  travel_name    ${two_input_str}       relax
+        按键操作   service_management  travel_belong_role  \\8      relax
+        按键操作   service_management  travel_belong_role  \\8      relax
+        输入字符串  service_management     travel_belong_role   学生入学     relax
+        按键操作   service_management     travel_belong_role    \\13        relax
+        点击按钮  service_management  save_button       relax
+
