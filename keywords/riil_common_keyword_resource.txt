@@ -18,27 +18,29 @@ Library  ../lib/riil_helper.py
 等待 5s
     sleep  5
 
-悬浮
-    [Arguments]  ${section}  ${xpath_name}  ${product}
+悬浮Xpath
+    [Arguments]  ${section}  ${xpath_name}   ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    mouse over  ${name}
+
+悬浮Search
+    [Arguments]  ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
     mouse over  ${name}
 
 点击查找指定元素
     [Arguments]   ${search_type}   ${search_name}
     ${button_name}  get common search  ${search_type}   ${search_name}
-    暂停
     click element   ${button_name}
 
 点击按钮
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
-    暂停
     click button   ${name}
 
 点击元素
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
-    暂停
     click element  ${name}
 
 输入字符串Excel版
@@ -49,7 +51,6 @@ Library  ../lib/riil_helper.py
 输入字符串
     [Arguments]   ${section}  ${xpath_name}  ${str_name}    ${product}
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
-    暂停
     input text  ${user}  ${str_name}
 
 按键
@@ -57,27 +58,17 @@ Library  ../lib/riil_helper.py
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     press keys  ${user}  ${keyboard_name}
 
-校验包含字符串
-    [Arguments]    ${section}  ${xpath_name}  ${str}   ${product}
-    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
-    ${fullstr}  get text  ${s}
-    log  ${fullstr}
-    Should Contain  ${fullstr}  ${str}
+验证字符串不存在
+    [Arguments]  ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
+    page should not contain element  ${name}
 
-暂停
-    sleep   1
-查找元素
-    [Arguments]   ${search_type}   ${search_name}
-    ${button_name}  get common search  ${search_type}   ${search_name}
-    click element   ${button_name}
+验证字符串不存在Xpath
+    [Arguments]  ${section}  ${xpath_name}   ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    page should not contain element  ${name}
 
-#点击按钮1
-#    [Arguments]  ${mode} ${section}  ${xpath_name}
-#    ${name}  ${mode}  ${section}  ${xpath_name}
-#    log  ${name}
-#    click button   ${name}
-
-
+<<<<<<< HEAD
 #add by lijun
 显示出隐藏元素
     [Arguments]   ${section}    ${xpath_name}   ${product}
@@ -160,3 +151,9 @@ Library  ../lib/riil_helper.py
     ${fullstr}  get value  ${s}
     log  ${fullstr}
     Should Contain  ${fullstr}  ${str}
+=======
+元素没有被显示
+    [Arguments]    ${search_type}   ${search_name}
+    ${name}  get common search  ${search_type}   ${search_name}
+    element should not be visible    ${name}
+>>>>>>> b3ec507f10ae3c79695cdcb67e107d78b23f4ecb
