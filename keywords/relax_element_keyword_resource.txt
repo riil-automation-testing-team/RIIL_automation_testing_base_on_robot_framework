@@ -44,8 +44,9 @@ Resource  riil_common_keyword_resource.txt
       点击按钮  service_management  save_button     relax
       校验包含字符串     service_management  role_must_tip   请选择角色   relax
 角色分类和所属角色必填项第二行
+      暂停
       清空输入框    service_management  input_category_name  relax
-      刷新页面
+      暂停
       输入字符串  service_management     belong_role   值班人员  relax
       按键操作   service_management     belong_role    \\13     relax
       点击按钮  service_management  save_button     relax
@@ -108,4 +109,22 @@ Resource  riil_common_keyword_resource.txt
         输入字符串  service_management     travel_belong_role   学生入学     relax
         按键操作   service_management     travel_belong_role    \\13        relax
         点击按钮  service_management  save_button       relax
+新建二级教师旅程_带参
+        [Arguments]   ${input_str}
+        显示出隐藏元素     service_management      move_mouse_teacher      relax
+        悬浮鼠标    service_management  move_mouse_teacher      relax
+        点击元素    service_management  add_icon_teacher       relax
+        输入字符串   service_management  travel_name    ${input_str}        relax
+        按键操作   service_management  travel_belong_role  \\8      relax
+        按键操作   service_management  travel_belong_role  \\8      relax
+        输入字符串  service_management     travel_belong_role   默认项目申请    relax
+        按键操作   service_management     travel_belong_role    \\13        relax
+        点击按钮  service_management  save_button       relax
+校园旅程分类_搜索
+        [Arguments]   ${input_str}
+         输入字符串   service_management  travel_search    ${input_str}        relax
+         按键操作   service_management     travel_search    \\13        relax
+展示搜索结果_校验
+         [Arguments]   ${path_str}  ${input_str}
+         校验包含字符串   service_management  ${path_str}    ${input_str}       relax
 

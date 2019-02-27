@@ -21,7 +21,7 @@ def get_xpath(section, name, product):
     if product == 'cheetah':
         cf.read(u'../../../../data/cheetah_element_xpath.conf')
     elif product == 'relax':
-        cf.read(u'../../../../data/relax_element_xpath.conf')
+        cf.read(u'../../../../../data/relax_element_xpath.conf',encoding="utf-8-sig")
     else:
         cf.read(u'../../../../data/bmc_element_xpath.conf')
     # print(cf.get(section, name))

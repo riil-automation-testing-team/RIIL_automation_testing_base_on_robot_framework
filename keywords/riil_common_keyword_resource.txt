@@ -3,12 +3,11 @@ Library  Selenium2Library
 Library  ../lib/riil_helper.py
 
 *** Keywords ***
-
 校验字符串
     [Arguments]    ${search_type}  ${search_name}
     ${element_name}  get common search  ${search_type}   ${search_name}
     ${fullstr}  get text  ${element_name}
-    should be equal  ${fullstr}  ${search_name}
+    should contain  ${fullstr}  ${search_name}
 
 隐式等待
     set browser implicit wait  10
@@ -125,3 +124,39 @@ Library  ../lib/riil_helper.py
      ${user1}  get_xpath  ${section}  ${xpath_name1}   ${product}
      ${user2}  get_xpath  ${section}  ${xpath_name2}   ${product}
      Drag And Drop      ${user1}     ${user2}
+当前页面不包含
+    [Arguments]   ${section}    ${xpath_name}        ${product}  ${limit}
+    ${user1}  get_xpath  ${section}  ${xpath_name}   ${product}
+    page should not contain element       ${user1}   ${limit}
+校验CheckBox勾选
+    [Arguments]   ${section}    ${xpath_name}        ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    Checkbox Should Be Selected      ${user}
+校验CheckBox未勾选
+    [Arguments]   ${section}    ${xpath_name}        ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    Checkbox Should Not Be Selected       ${user}
+校验元素为焦点
+    [Arguments]   ${section}    ${xpath_name}        ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    Element Should Be Focused       ${user}
+设置元素为焦点
+    [Arguments]   ${section}    ${xpath_name}        ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    Set Focus To Element      ${user}
+获取元素文本
+    [Arguments]    ${section}  ${xpath_name}   ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    ${fullstr}  get text  ${s}
+    log  ${fullstr}
+获取元素值
+    [Arguments]    ${section}  ${xpath_name}   ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    ${fullstr}  get value  ${s}
+    log  ${fullstr}
+校验获取元素值
+    [Arguments]    ${section}  ${xpath_name}  ${str}   ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    ${fullstr}  get value  ${s}
+    log  ${fullstr}
+    Should Contain  ${fullstr}  ${str}

@@ -234,13 +234,94 @@ Library  ../lib/riil_helper.py
     点击元素    service_management      delete_confirm      relax
     暂停
     校验包含字符串   service_management  toast_delete_success   删除成功！     relax
+#TC搜索校园旅程_672535
+新建二级旅程_行政办公_教务中心
+    新建一级旅程_带参       自动化测试教师旅程    教师
+    新建二级教师旅程_带参     行政办公
+    新建二级教师旅程_带参     教务中心
+    点击元素    service_management      create_new_travel       relax
+搜索数据
+    校园旅程分类_搜索     旅程
+    展示搜索结果_校验     move_mouse_student   自动化测试学生旅程
+    展示搜索结果_校验     move_mouse_teacher   自动化测试教师旅程
+    校园旅程分类_搜索     学生活动
+    展示搜索结果_校验     move_mouse_student_two   学生活动
+    校园旅程分类_搜索     搜索不存在的数据"
 
+展示搜索结果_搜索出来的内容加粗显示
+    暂停
+    当前页面不包含    service_management      not_exist_search    relax     1
+#TC存在多个角色分类时_只能存在一个开启状态_660305
+新建三个旅程其中第一个为开启
+    新建一级旅程_带参       自动化测试教师旅程    教师
+    点击元素    service_management      create_new_travel       relax
+    新建一级旅程_带参1      自动化测试学生旅程    学生
+    点击元素    service_management      create_new_travel       relax
+    新建一级旅程_带参1      自动化测试校长旅程    教师
+修改第二个旅程为开启
+     显示出隐藏元素     service_management      move_mouse_student      relax
+     点击元素      service_management      move_mouse_student      relax
+     点击元素       service_management  check_box_0     relax
+     点击按钮  service_management  save_button     relax
+查看只有第二个开启1和3旅程为未开启
+    显示出隐藏元素     service_management      move_mouse_student      relax
+    点击元素      service_management      move_mouse_student      relax
+    sleep   2
+    校验CheckBox勾选    service_management  check_box_0     relax
+    显示出隐藏元素     service_management      move_mouse_teacher      relax
+    点击元素      service_management      move_mouse_teacher      relax
+     sleep   2
+    校验CheckBox未勾选    service_management  check_box_0     relax
+    显示出隐藏元素     service_management      move_mouse_master      relax
+    点击元素      service_management      move_mouse_master      relax
+     sleep   2
+    校验CheckBox未勾选    service_management  check_box_0     relax
+#TC出厂默认有校园旅程_660532
+为新生报道_入学_校园生活_实习生活_实习应聘_毕业离校_校友活动
+    显示出隐藏元素     service_management      default_student_travel      relax
+    悬浮鼠标    service_management  default_student_travel      relax
+    点击元素    service_management  default_travel_student_triangle        relax
+    校验包含字符串     service_management      default_student_report      新生报道     relax
+    校验包含字符串     service_management      default_student_entrance      入学     relax
+    校验包含字符串     service_management      default_student_campus_life      校园生活     relax
+    校验包含字符串     service_management      default_student_practice_life      实习生活     relax
+    校验包含字符串     service_management      default_student_practice_apply      实习应聘     relax
+    校验包含字符串     service_management      default_student_leave_school      毕业离校     relax
+    校验包含字符串     service_management      default_student_alumni_activities      校友活动     relax
+#TC拖动旅程后_左侧树不收起_679473
+拖动教务中心到行政办公下边
+    #显示出隐藏元素     service_management      move_mouse_teacher      relax
+    #悬浮鼠标    service_management  move_mouse_teacher      relax
+    #点击元素    service_management      travel_name_teacher_triangle      relax
+    #显示出隐藏元素     service_management      move_mouse_teacher_two      relax
+    悬浮鼠标    service_management  move_mouse_teacher_two      relax
+    点击元素    service_management      move_mouse_teacher_two      relax
+    sleep   1
+    拖动元素    service_management      move_mouse_teacher_two      move_mouse_teacher_administrator_down     relax
 
+二级旅程仍为展开状态
+    校验包含字符串     service_management      move_mouse_teacher_two      教务中心    relax
+    校验包含字符串     service_management      move_mouse_teacher_administrator      行政办公     relax
 
+#TC删除校园旅程后_左侧树不收起_679365
+删除学生办事
+    悬浮鼠标    service_management  move_mouse_student_two_second      relax
+    点击元素    service_management      delete_student_two_second         relax
+    点击元素    service_management      delete_confirm      relax
+删除一个二级旅程后仍为展开状态
+    校验包含字符串     service_management      move_mouse_student_two      学生活动     relax
 
-
-
-
-
-
-
+#TC新建和编辑旅程后_左侧的树不收起_且定位到当前操作的旅程上_679364
+默认选中学生活动
+    sleep  3
+    返回元素属性      service_management      move_mouse_student_two      class    jstree-clicked       relax
+    校验获取元素值     service_management      one_travel_name      学生活动   relax
+修改学生活动为课外活动
+    按键操作   service_management  one_travel_name  \\8     relax
+    按键操作   service_management  one_travel_name  \\8     relax
+    输入字符串  service_management     one_travel_name   课外活动       relax
+    点击按钮  service_management  save_button       relax
+默认选中课外活动
+    sleep  3
+    返回元素属性      service_management      move_mouse_student_modify_two      class    jstree-clicked       relax
+    校验获取元素值     service_management      one_travel_name      课外活动   relax
