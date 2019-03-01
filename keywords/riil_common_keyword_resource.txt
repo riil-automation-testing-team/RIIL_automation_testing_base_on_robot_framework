@@ -51,6 +51,7 @@ Library  ../lib/riil_helper.py
 输入字符串
     [Arguments]   ${section}  ${xpath_name}  ${str_name}    ${product}
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    sleep   2
     input text  ${user}  ${str_name}
 
 按键
@@ -68,8 +69,10 @@ Library  ../lib/riil_helper.py
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     page should not contain element  ${name}
 
-<<<<<<< HEAD
+
 #add by lijun
+暂停
+    sleep    2
 显示出隐藏元素
     [Arguments]   ${section}    ${xpath_name}   ${product}
      ${user}  get_xpath  ${section}  ${xpath_name}  ${product}
@@ -94,6 +97,11 @@ Library  ../lib/riil_helper.py
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     暂停
     Mouse Over  ${user}
+移出鼠标
+    [Arguments]   ${section}    ${xpath_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    暂停
+    mouse out  ${user}
 上传文件
     [Arguments]   ${section}  ${xpath_name}  ${file}    ${product}
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
@@ -103,6 +111,11 @@ Library  ../lib/riil_helper.py
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
     ${fullstr}  get text  ${user}
     Should Be Empty  ${fullstr}
+校验非空
+    [Arguments]   ${section}    ${xpath_name}   ${product}
+    ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
+    ${fullstr}  get text  ${user}
+    should not be empty  ${fullstr}
 
 返回元素属性  #TODO
     [Arguments]   ${section}    ${xpath_name}    ${key}     ${str}  ${product}
@@ -151,9 +164,22 @@ Library  ../lib/riil_helper.py
     ${fullstr}  get value  ${s}
     log  ${fullstr}
     Should Contain  ${fullstr}  ${str}
-=======
+
 元素没有被显示
     [Arguments]    ${search_type}   ${search_name}
     ${name}  get common search  ${search_type}   ${search_name}
     element should not be visible    ${name}
->>>>>>> b3ec507f10ae3c79695cdcb67e107d78b23f4ecb
+
+图片比较
+    [Arguments]    ${act}   ${exp}
+    ${differ}     image cmp   ${act}   ${exp}
+    Should Be True      ${differ}<10
+校验图片包含
+    [Arguments]    ${act}   ${exp}  ${value}
+    ${differ}     match_img     ${act}   ${exp}    ${value}
+    Should Be True      ${differ}
+全屏截图
+    [Arguments]    ${path}
+    log   ${path}
+    Capture Page Screenshot      ${path}
+

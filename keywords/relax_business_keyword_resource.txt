@@ -12,6 +12,9 @@ Library  ../lib/riil_helper.py
     登录
     等待 5s
     登录成功验证  工作台
+进入校园旅程用户页面   #用例Given
+    启动Relax未登录首页
+
 #TC新建一级校园旅程
 进入校园旅程新建页面   #用例Given
     登录Relax     admin  admin
@@ -66,21 +69,27 @@ Library  ../lib/riil_helper.py
 
 #TC修改一级校园旅程
 修改一级角色旅程的信息
+    新建二级角色分类学生分类关联的角色为学生
     显示出隐藏元素     service_management  move_mouse      relax
     点击元素  service_management  move_mouse        relax
+    sleep  2
     点击元素  service_management  belong_role       relax
     按键操作   service_management  belong_role  \\8     relax
     按键操作   service_management  belong_role  \\8     relax
     输入字符串  service_management  belong_role  值班人员        relax
     按键操作   service_management  belong_role  \\13        relax
+    sleep  2
     点击元素  service_management  belong_role       relax
     输入字符串  service_management  belong_role  服务台     relax
     按键操作   service_management  belong_role  \\13        relax
+    sleep   1
     点击按钮  service_management  save_button       relax
 保存成功_校园旅程二级目录的所属角色自动同步_与一级目录一致
     点击元素    service_management  travel_name_triangle        relax
     点击元素    service_management  two_travel_name     relax
-    校验包含字符串  service_management     check_student   值班人员、服务台        relax
+    sleep   2
+    校验包含字符串  service_management     check_student   服务台、值班人员    relax
+    校验非空    service_management  travel_belong_role      relax
 
 #TC修改二级校园旅程_651001
 修改二级角色旅程的信息
@@ -325,3 +334,73 @@ Library  ../lib/riil_helper.py
     sleep  3
     返回元素属性      service_management      move_mouse_student_modify_two      class    jstree-clicked       relax
     校验获取元素值     service_management      one_travel_name      课外活动   relax
+#TC查看数据信息_数据信息回显和最新保存的一致_672528
+前端回显正常
+    显示出隐藏元素     service_management      move_mouse_teacher      relax
+    悬浮鼠标    service_management  move_mouse_teacher      relax
+    校验包含字符串     service_management      move_mouse_teacher      自动化测试教师旅程     relax
+    显示出隐藏元素     service_management      move_mouse_teacher_two      relax
+    悬浮鼠标    service_management  move_mouse_teacher_two      relax
+    校验包含字符串     service_management      move_mouse_teacher_two      教务中心    relax
+    显示出隐藏元素     service_management      move_mouse_teacher_administrator      relax
+    悬浮鼠标    service_management  move_mouse_teacher_administrator      relax
+    校验包含字符串     service_management      move_mouse_teacher_administrator      行政办公     relax
+    校验包含字符串    service_management  check_student   教师       relax
+    清空输入框    service_management  travel_name        relax
+    输入字符串   service_management  travel_name    验证修改自动化测试旅程名称        relax
+    点击按钮  service_management  save_button       relax
+    点击元素    service_management  travel_name_triangle_verify        relax
+    点击元素    service_management  travel_name_triangle_verify        relax
+    #点击元素    service_management  two_travel_name_modify      relax
+    校验获取元素值     service_management      one_travel_name      验证修改自动化测试旅程名称   relax
+    #校验包含字符串    service_management  two_travel_name_modify   验证修改自动化测试旅程名称       relax
+
+#TC无默认选择项_650547
+无默认选择的服务事项
+    #显示出隐藏元素     school_page      subject       relax
+    sleep  3
+    显示出隐藏元素     school_page     subject    relax
+    #croll element into view
+    校验页面未显示元素     school_page     spread    relax
+校验入学阶段的全部服务事项
+    显示并悬浮   school_page  entrance
+    显示出隐藏元素      school_page     student_entrance_first         relax
+    显示悬浮校验包含
+    显示并悬浮   school_page  student_report
+    显示悬浮校验包含
+    显示并悬浮   school_page  campus_life
+    显示悬浮校验包含
+    显示并悬浮   school_page  practice_life
+    显示悬浮校验包含
+    显示并悬浮   school_page  practice_apply
+    显示悬浮校验包含
+    显示并悬浮   school_page  leave_school
+    显示悬浮校验包含
+    显示并悬浮   school_page  alumni_activities
+    显示悬浮校验包含
+#TC鼠标移动时有动画效果_650806
+将鼠标移动至校园旅程的入学阶段
+    sleep  3
+    显示出隐藏元素     school_page  entrance      relax
+入学阶段的锚点高亮显示_下方显示入学阶段的全部服务事项
+    悬浮鼠标   school_page  journey-card-dot      relax
+    全屏截图    ../../../../../../lib/Highlight.png
+    sleep   1
+    校验图片包含   ../../../../../lib/Highlight.png    ../../../../../lib/move_in.png   0.9
+    移出鼠标    school_page  journey-card-dot      relax
+    全屏截图    ../../../../../../lib/normal.png
+    sleep   1
+    校验图片包含   ../../../../../lib/normal.png    ../../../../../lib/move_out.png   0.9
+    校验入学阶段的全部服务事项
+#TC服务事项过多时向下追加_650548
+查看校园旅程
+    显示出隐藏元素     school_page  entrance      relax
+    #显示出隐藏元素      school_page     student_entrance_first         relax
+    悬浮鼠标   school_page     entrance         relax
+    sleep  3
+    全屏截图      ../../../../../../lib/spread.png
+    image_cut_special    ../../../../../lib/spread.png       ../../../../../lib/spread.png
+
+服务事项依次往下排_不会出现横向和纵向滚动
+     校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/vertical.png   1.0
+      校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/horizontal.png   1.0

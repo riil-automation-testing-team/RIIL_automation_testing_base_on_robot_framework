@@ -3,15 +3,33 @@ Library  Selenium2Library
 Library  ../lib/riil_helper.py
 Resource  riil_common_keyword_resource.txt
 *** Keywords ***
-
+校验包含字符串
+    [Arguments]    ${section}  ${xpath_name}  ${str}   ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    ${fullstr}  get text  ${s}
+    log  ${fullstr}
+    Should Contain  ${fullstr}  ${str}
 打开浏览器
     ${url}  get_xpath  login_page  relax   relax
     log  ${url}
     Open Browser   ${url}  chrome
     MAXIMIZE BROWSER WINDOW
 
+启动Relax未登录首页
+    ${url}  get_xpath  school_page  relax_home   relax
+    log  ${url}
+    Open Browser   ${url}  chrome
+    MAXIMIZE BROWSER WINDOW
+
 关闭浏览器
     close browser
+
+校验页面未显示元素
+    [Arguments]  ${section}  ${xpath_name}   ${product}
+    ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
+    Element Should Not Be Visible    ${name}
+
+
 
 登录名称
     [Arguments]  ${str_name}
@@ -39,6 +57,7 @@ Resource  riil_common_keyword_resource.txt
     点击按钮  login_page  服务管理  relax
 
 角色分类和所属角色必填项第一行
+      sleep     2
       输入字符串   service_management  input_category_name    自动化测试分类    relax
       点击元素  service_management  check_box_0     relax
       点击按钮  service_management  save_button     relax
@@ -74,14 +93,16 @@ Resource  riil_common_keyword_resource.txt
         点击元素    service_management  add_icon        relax
         输入字符串   service_management  travel_name    自动化测试旅程名称        relax
         #choose file   //input[@name="uploadFile"]   E:\\photo2.png
-        校验字符串   service_management  check_student   学生      relax
+        校验包含字符串   service_management  check_student   学生      relax
         上传文件    service_management  upload      E:\\photo2.png      relax
         输入字符串  service_management     travel_belong_role   学生入学     relax
         按键操作   service_management     travel_belong_role    \\13        relax
         点击按钮  service_management  save_button       relax
         显示出隐藏元素     service_management  move_mouse      relax
-        点击元素    service_management  travel_name_triangle        relax
-        sleep   5
+        #点击元素    service_management  travel_name_triangle        relax
+        sleep  1
+        悬浮鼠标    service_management      two_travel_name     relax
+        sleep   1
         校验包含字符串   service_management  two_travel_name   自动化测试旅程名称     relax
 新建一级旅程_带参
       [Arguments]   ${input_str}    ${str}
@@ -127,4 +148,11 @@ Resource  riil_common_keyword_resource.txt
 展示搜索结果_校验
          [Arguments]   ${path_str}  ${input_str}
          校验包含字符串   service_management  ${path_str}    ${input_str}       relax
-
+显示并悬浮
+    [Arguments]   ${path_str}  ${input_str}
+    sleep   2
+    显示出隐藏元素     ${path_str}      ${input_str}     relax
+    悬浮鼠标     ${path_str}      ${input_str}      relax
+显示悬浮校验包含
+    悬浮鼠标   school_page     student_entrance         relax
+    校验包含字符串     school_page      student_entrance      学生入学    relax

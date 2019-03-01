@@ -2,7 +2,7 @@
 Library           Selenium2Library
 Resource         ../../../../../keywords/relax_business_keyword_resource.txt
 Test Setup        打开浏览器
-Test Teardown     关闭浏览器
+#Test Teardown     关闭浏览器
 
 *** Test Cases ***
 修改一级校园旅程
