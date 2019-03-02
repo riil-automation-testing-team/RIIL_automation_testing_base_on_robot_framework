@@ -39,35 +39,7 @@ def get_common_search(search_type, search_element_name):
     print("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
     return str("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
 
-
-def image_cmp(act, exp):
-    image1 = Image.open(act)
-    image2 = Image.open(exp)
-    h1 = image1.histogram()
-    h2 = image2.histogram()
-    differ = math.sqrt(reduce(operator.add, list(map(lambda a, b: (a - b) ** 2, h1, h2))) / len(h1))
-    return differ
-
-
-def image_cut(path, opt):
-    img = cv2.imread(path)
-    height = img.shape[0]
-    width = img.shape[1]
-    # channel = img.shape[2]
-    # print(height, width, channel)
-    img = Image.open(path)  # 打开当前路径图像
-    # box1 = (width/2-100, height/2-20, width/2+100, height/2+20) # 设置图像裁剪区域 (x左上，y左上，x右下,y右下)
-    if opt == 'out':
-        box1 = (width / 2 - 100, height / 2 - 20, width / 2 + 100, height / 2 + 30)  # 不选中
-        image1 = img.crop(box1)  # 图像裁剪
-        image1.save("./move_out.png")  # 存储裁剪得到的图像
-    if opt == 'in':
-        box1 = (width / 2 - 100, height / 2, width / 2 + 100, height / 2 + 50)  # 选中
-        image1 = img.crop(box1)  # 图像裁剪
-        image1.save("./move_in.png")  # 存储裁剪得到的图像
-
-
-def match_img(image, Target, value):
+def match_img(image, Target, value,flag):
     print("hello")
     print(os.path.dirname(image))
     print(os.path.dirname(Target))
@@ -79,10 +51,17 @@ def match_img(image, Target, value):
     res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
     threshold = value
     loc = np.where(res >= float(threshold))
-    if len(loc[0]) == 0:
-        return True
+    print("loc = ",len(loc[0]))
+    if  flag == 'exist':
+        if len(loc[0]) == 0:
+            return False
+        else:
+            return True
     else:
-        return False
+        if len(loc[0]) == 0:
+            return True
+        else:
+            return False
 def image_cmp(act,exp):
     image1 = Image.open(act)
     image2 = Image.open(exp)
