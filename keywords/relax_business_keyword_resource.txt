@@ -363,44 +363,195 @@ Library  ../lib/riil_helper.py
     #croll element into view
     校验页面未显示元素     school_page     spread    relax
 校验入学阶段的全部服务事项
-    显示并悬浮   school_page  entrance
-    显示出隐藏元素      school_page     student_entrance_first         relax
-    显示悬浮校验包含
-    显示并悬浮   school_page  student_report
-    显示悬浮校验包含
-    显示并悬浮   school_page  campus_life
-    显示悬浮校验包含
-    显示并悬浮   school_page  practice_life
-    显示悬浮校验包含
-    显示并悬浮   school_page  practice_apply
-    显示悬浮校验包含
-    显示并悬浮   school_page  leave_school
-    显示悬浮校验包含
-    显示并悬浮   school_page  alumni_activities
-    显示悬浮校验包含
+    #显示并悬浮   school_page  entrance
+#    显示出隐藏元素      school_page     student_entrance_first         relax
+#    悬浮鼠标   school_page     student_entrance_first         relax
+#    校验包含字符串     school_page      student_entrance_first      学生入学    relax
+    #显示悬浮校验包含
+    sleep  5
+    #scroll element into view   //span[@text()="新生报道"]
+    scroll element into view     //span[text()="入学"]
+    sleep  3
+    #mouse over      //span[@title="新生报道"]
+    mouse over      //span[text()="入学"]
+    scroll element into view        //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
+    mouse over  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
+    sleep  3
+    #悬浮鼠标   school_page  student_report      relax
+    #悬浮鼠标   school_page     student_entrance_first         relax
+#    显示出隐藏元素      school_page     student_entrance_first         relax
+#    悬浮鼠标   school_page     student_entrance_first         relax
+    scroll element into view    //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
+    mouse over  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
+    ${fullstr}         get text  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
+    log  ${fullstr}
+    mouse over   //span[@title="新生报道"]
+    Page Should Contain     学生入学
+    ${test}     Get Element Attribute  //div[@data-frame-id="journeyCard"]     journey-id
+    log     ${test}
+    #校验包含字符串     school_page      student_entrance_first      学生入学    relax
+    #校验包含字符串     school_page      student_entrance      学生入学    relax
+#    显示并悬浮   school_page  campus_life
+   # 显示悬浮校验包含
+#    显示并悬浮   school_page  practice_life
+#    显示悬浮校验包含
+#    显示并悬浮   school_page  practice_apply
+#    显示悬浮校验包含
+#    显示并悬浮   school_page  leave_school
+#    显示悬浮校验包含
+#    显示并悬浮   school_page  alumni_activities
+#    显示悬浮校验包含
 #TC鼠标移动时有动画效果_650806
 将鼠标移动至校园旅程的入学阶段
     sleep  3
     显示出隐藏元素     school_page  entrance      relax
 入学阶段的锚点高亮显示_下方显示入学阶段的全部服务事项
     悬浮鼠标   school_page  journey-card-dot      relax
-    全屏截图    ../../../../../../lib/Highlight.png
+    全屏截图    ../../../../../../screenshot/relax/Highlight.png
     sleep   1
-    校验图片包含   ../../../../../lib/Highlight.png    ../../../../../lib/move_in.png   0.9
+    校验图片包含   ../../../../../screenshot/relax/Highlight.png    ../../../../../screenshot/relax/move_in.png   0.9     exist
     移出鼠标    school_page  journey-card-dot      relax
-    全屏截图    ../../../../../../lib/normal.png
+    全屏截图    ../../../../../../screenshot/relax/normal.png
     sleep   1
-    校验图片包含   ../../../../../lib/normal.png    ../../../../../lib/move_out.png   0.9
+    校验图片包含   ../../../../../screenshot/relax/normal.png    ../../../../../screenshot/relax/move_out.png   0.9       exist
     校验入学阶段的全部服务事项
 #TC服务事项过多时向下追加_650548
 查看校园旅程
+    sleep   3
     显示出隐藏元素     school_page  entrance      relax
     #显示出隐藏元素      school_page     student_entrance_first         relax
-    悬浮鼠标   school_page     entrance         relax
+    sleep   1
+    悬浮鼠标   school_page     student_entrance_first         relax
     sleep  3
-    全屏截图      ../../../../../../lib/spread.png
-    image_cut_special    ../../../../../lib/spread.png       ../../../../../lib/spread.png
+#    全屏截图      ../../../../../../lib/spread.png
+#    image_cut_special    ../../../../../lib/spread.png       ../../../../../lib/spread.png
+    全屏截图      ../../../../../../screenshot/relax/spread.png
+    image_cut_special    ../../../../../screenshot/relax/spread.png       ../../../../../screenshot/relax/spread.png
 
 服务事项依次往下排_不会出现横向和纵向滚动
-     校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/vertical.png   1.0
-      校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/horizontal.png   1.0
+#     校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/vertical.png   1.0    noexist
+#     校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/horizontal.png   1.0     noexist
+     校验图片包含   ../../../../../screenshot/relax/spread.png    ../../../../../screenshot/relax/vertical.png   1.0      noexist
+     校验图片包含   ../../../../../screenshot/relax/spread.png    ../../../../../screenshot/relax/horizontal.png   1.0      noexist
+
+#TC校园旅程字数过长时_有省略号_650745
+新建名字超长的二级旅程
+    新建一级关联学生
+    显示出隐藏元素     service_management  move_mouse      relax
+    悬浮鼠标    service_management  move_mouse      relax
+    点击元素    service_management  add_icon        relax
+    输入字符串   service_management  travel_name    中华人民共和国中央人民政府中国共产党万岁万岁万万岁        relax
+    输入字符串  service_management     travel_belong_role   学生入学     relax
+    按键操作   service_management     travel_belong_role    \\13        relax
+    点击按钮  service_management  save_button       relax
+切到前端查看
+    sleep  3
+    点击元素  school_page   lobbyTab    relax
+前端页面对应旅程出现省略号
+    sleep  3
+    显示出隐藏元素      school_page         journeyCard         relax
+    全屏截图       ../../../../../../screenshot/relax/threedot.png
+    sleep  2
+    校验图片包含   ../../../../../screenshot/relax/threedot.png    ../../../../../screenshot/relax/threedot_exp.png   0.8    exist
+#TC文本超长省略_但鼠标移动上去可以在title显示完整内容_374824
+超长标题显示正常
+
+    sleep  3
+    显示出隐藏元素      school_page         journeyCard         relax
+    sleep  1
+    #execute javascript  $("//span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'").click()
+    #Drag And Drop   //span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'"      //span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'"
+    # //span[text()="中华人民共和国中央人民政府中国共产党万岁万岁万万岁"]
+    sleep  2
+    全屏截图       ../../../../../../screenshot/relax/supper_long.png
+    sleep  2
+    校验图片包含   ../../../../../screenshot/relax/supper_long.png    ../../../../../screenshot/relax/supper_long_exp.png   0.8    exist
+#TC校园旅程可以拖动排序_652411
+按序新建二级旅程_行政办公_教务中心
+    新建一级旅程_带参       自动化测试教师旅程    教师
+    新建二级教师旅程_带参     行政办公
+    新建二级教师旅程_带参     教务中心
+切到前端查看服务排序
+    sleep  2
+    点击元素  school_page   lobbyTab    relax
+    sleep  3
+    显示出隐藏元素      school_page         campus_journey         relax
+    悬浮鼠标   school_page     campus_journey         relax
+    校验包含字符串     school_page      sort_administrator      行政办公     relax
+    校验包含字符串     school_page      sort_teach_center      教务中心     relax
+    关闭浏览器
+拖动教务中心到行政办公下边_前端展示
+#    sleep  2
+#    点击元素    login_page      workspace       relax
+#    sleep  3
+#    点击右展按钮
+#    显示出隐藏元素     service_management  service_manager     relax
+#    点击元素    service_management  service_manager   relax  #//span[text()='服务管理']
+#    显示出隐藏元素     service_management  service_manager_title       relax
+#    点击元素    service_management  service_manager_title      relax    #//span[text()='校园旅程分类']
+    打开浏览器
+    进入校园旅程后台配置页面
+    显示出隐藏元素     service_management      move_mouse_teacher      relax
+    悬浮鼠标    service_management  move_mouse_teacher      relax
+    #显示出隐藏元素     service_management      move_mouse_teacher      relax
+    #悬浮鼠标    service_management  move_mouse_teacher      relax
+    点击元素    service_management      travel_name_teacher_triangle      relax
+    #显示出隐藏元素     service_management      move_mouse_teacher_two      relax
+    悬浮鼠标    service_management  move_mouse_teacher_two      relax
+    点击元素    service_management      move_mouse_teacher_two      relax
+    sleep   1
+    拖动元素    service_management      move_mouse_teacher_two      move_mouse_teacher_administrator_down     relax
+
+
+#    悬浮鼠标    service_management  move_mouse_teacher_two      relax
+#    点击元素    service_management      move_mouse_teacher_two      relax
+#    sleep   1
+#    拖动元素    service_management      move_mouse_teacher_two
+前端页面对应旅程顺序改变
+    sleep  3
+    显示出隐藏元素      school_page         campus_journey         relax
+    悬浮鼠标   school_page     campus_journey         relax
+    校验包含字符串     school_page      sort_administrator_1     行政办公     relax
+    校验包含字符串     school_page      sort_teach_center_1     教务中心     relax
+
+#TC校园旅程节点宽度不足时_出现滚动按钮_662700
+增加校园旅程多项服务
+    增加校园旅程服务        测试100
+    增加校园旅程服务        测试200
+    增加校园旅程服务        测试300
+    增加校园旅程服务        测试400
+    增加校园旅程服务        测试500
+    增加校园旅程服务        测试600
+    增加校园旅程服务        测试700
+    增加校园旅程服务        测试800
+校园旅程节点处有滚动按钮
+    sleep  2
+    显示出隐藏元素      school_page     student_entrance_first         relax
+    显示并悬浮   school_page  entrance
+    sleep  2
+    点击元素   school_page   right_role     relax
+#TC当所有的一级角色旅程都没有开启以时间轴展示时_首页的校园旅程消失_其他内容上移_660315
+所有旅程关闭开启以时间轴展示
+    显示出隐藏元素     service_management      default_student_travel      relax
+    悬浮鼠标    service_management  default_student_travel      relax
+    点击元素    service_management      default_student_travel     relax
+    sleep   1
+    点击元素    service_management      check_box_0     relax
+    点击按钮  service_management  save_button       relax
+    切到前端查看
+
+首页的校园旅程消失_其他内容上移
+    暂停
+    当前页面不包含    school_page      campus_trip    relax     1
+    暂停
+    关闭浏览器
+    打开浏览器
+    进入校园旅程后台配置页面
+    显示出隐藏元素     service_management      default_student_travel      relax
+    sleep  2
+    悬浮鼠标    service_management  default_student_travel      relax
+    点击元素    service_management      default_student_travel     relax
+    sleep   1
+    点击元素    service_management      check_box_0     relax
+    点击按钮  service_management  save_button       relax
+

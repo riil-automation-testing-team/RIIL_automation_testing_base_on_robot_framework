@@ -72,7 +72,7 @@ Library  ../lib/riil_helper.py
 
 #add by lijun
 暂停
-    sleep    2
+    sleep    1
 显示出隐藏元素
     [Arguments]   ${section}    ${xpath_name}   ${product}
      ${user}  get_xpath  ${section}  ${xpath_name}  ${product}
@@ -175,11 +175,16 @@ Library  ../lib/riil_helper.py
     ${differ}     image cmp   ${act}   ${exp}
     Should Be True      ${differ}<10
 校验图片包含
-    [Arguments]    ${act}   ${exp}  ${value}
-    ${differ}     match_img     ${act}   ${exp}    ${value}
+    [Arguments]    ${act}   ${exp}  ${value}    ${isexist}
+    ${differ}     match_img     ${act}   ${exp}    ${value}     ${isexist}
     Should Be True      ${differ}
 全屏截图
     [Arguments]    ${path}
     log   ${path}
     Capture Page Screenshot      ${path}
 
+
+按元素截图
+    [Arguments]    ${act}       ${exp}   ${path}       ${product}
+     ${s}  get_xpath  ${act}   ${exp}   ${product}
+     capture element screenshot  ${s}   ${path}
