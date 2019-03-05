@@ -1,6 +1,6 @@
 *** Settings ***
 Library           Selenium2Library
-Resource          relax_business_keyword_resource.txt
+Resource         ../../../../../keywords/relax_business_keyword_resource.txt
 Test Setup        打开浏览器
 #Test Teardown     关闭浏览器
 #说明：执行此用例时，默认后端是配置好的
