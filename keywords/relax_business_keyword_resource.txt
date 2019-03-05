@@ -363,43 +363,23 @@ Library  ../lib/riil_helper.py
     #croll element into view
     校验页面未显示元素     school_page     spread    relax
 校验入学阶段的全部服务事项
-    #显示并悬浮   school_page  entrance
-#    显示出隐藏元素      school_page     student_entrance_first         relax
-#    悬浮鼠标   school_page     student_entrance_first         relax
-#    校验包含字符串     school_page      student_entrance_first      学生入学    relax
-    #显示悬浮校验包含
-    sleep  5
-    #scroll element into view   //span[@text()="新生报道"]
-    scroll element into view     //span[text()="入学"]
-    sleep  3
-    #mouse over      //span[@title="新生报道"]
-    mouse over      //span[text()="入学"]
-    scroll element into view        //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
-    mouse over  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
-    sleep  3
-    #悬浮鼠标   school_page  student_report      relax
-    #悬浮鼠标   school_page     student_entrance_first         relax
-#    显示出隐藏元素      school_page     student_entrance_first         relax
-#    悬浮鼠标   school_page     student_entrance_first         relax
-    scroll element into view    //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
-    mouse over  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
-    ${fullstr}         get text  //div[@data-frame-id="catalogText"]/span[2][text()="学生入学"]
-    log  ${fullstr}
-    mouse over   //span[@title="新生报道"]
-    Page Should Contain     学生入学
-    ${test}     Get Element Attribute  //div[@data-frame-id="journeyCard"]     journey-id
-    log     ${test}
-    #校验包含字符串     school_page      student_entrance_first      学生入学    relax
-    #校验包含字符串     school_page      student_entrance      学生入学    relax
-#    显示并悬浮   school_page  campus_life
+
+    显示并悬浮   school_page  entrance
+    显示出隐藏元素      school_page     student_entrance_first         relax
+    悬浮鼠标   school_page     student_entrance_first         relax
+    校验包含字符串     school_page      student_entrance_first      学生入学    relax
+    显示悬浮校验包含
+    显示并悬浮   school_page  student_report
    # 显示悬浮校验包含
-#    显示并悬浮   school_page  practice_life
+    显示并悬浮   school_page  campus_life
+   # 显示悬浮校验包含
+    显示并悬浮   school_page  practice_life
 #    显示悬浮校验包含
-#    显示并悬浮   school_page  practice_apply
+    显示并悬浮   school_page  practice_apply
 #    显示悬浮校验包含
-#    显示并悬浮   school_page  leave_school
+    显示并悬浮   school_page  leave_school
 #    显示悬浮校验包含
-#    显示并悬浮   school_page  alumni_activities
+   显示并悬浮   school_page  alumni_activities
 #    显示悬浮校验包含
 #TC鼠标移动时有动画效果_650806
 将鼠标移动至校园旅程的入学阶段
@@ -447,6 +427,7 @@ Library  ../lib/riil_helper.py
 切到前端查看
     sleep  3
     点击元素  school_page   lobbyTab    relax
+    sleep  3
 前端页面对应旅程出现省略号
     sleep  3
     显示出隐藏元素      school_page         journeyCard         relax
@@ -455,17 +436,11 @@ Library  ../lib/riil_helper.py
     校验图片包含   ../../../../../screenshot/relax/threedot.png    ../../../../../screenshot/relax/threedot_exp.png   0.8    exist
 #TC文本超长省略_但鼠标移动上去可以在title显示完整内容_374824
 超长标题显示正常
-
     sleep  3
     显示出隐藏元素      school_page         journeyCard         relax
     sleep  1
-    #execute javascript  $("//span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'").click()
-    #Drag And Drop   //span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'"      //span[text()='中华人民共和国中央人民政府中国共产党万岁万岁万万岁'"
-    # //span[text()="中华人民共和国中央人民政府中国共产党万岁万岁万万岁"]
-    sleep  2
-    全屏截图       ../../../../../../screenshot/relax/supper_long.png
-    sleep  2
-    校验图片包含   ../../../../../screenshot/relax/supper_long.png    ../../../../../screenshot/relax/supper_long_exp.png   0.8    exist
+    悬浮鼠标    school_page     supper_title    relax
+    校验包含字符串     school_page     supper_title        中华人民共和国中央人民政府中国共产党万岁万岁万万岁   relax
 #TC校园旅程可以拖动排序_652411
 按序新建二级旅程_行政办公_教务中心
     新建一级旅程_带参       自动化测试教师旅程    教师
@@ -536,7 +511,12 @@ Library  ../lib/riil_helper.py
     悬浮鼠标    service_management  default_student_travel      relax
     点击元素    service_management      default_student_travel     relax
     sleep   1
-    点击元素    service_management      check_box_0     relax
+    #获取元素属性值     service_management      check_box_0     relax
+    全屏截图    ../../../../../../screenshot/relax/screen.png
+    sleep   1
+    判断checkbox是否为选中      ../../../../../screenshot/relax/screen.png      ../../../../../screenshot/relax/box_checked.png    0.9     exist
+    #校验图片包含   ../../../../../screenshot/relax/Highlight.png    ../../../../../screenshot/relax/move_in.png   0.9     exist
+#    点击元素    service_management      check_box_0     relax
     点击按钮  service_management  save_button       relax
     切到前端查看
 
@@ -555,3 +535,69 @@ Library  ../lib/riil_helper.py
     点击元素    service_management      check_box_0     relax
     点击按钮  service_management  save_button       relax
 
+#TC登录用户角色不包含所属角色时_依旧显示校园旅程_660240
+登录用户所属角色不包含学生
+    显示出隐藏元素     service_management      default_student_travel      relax
+    悬浮鼠标    service_management  default_student_travel      relax
+    点击元素    service_management      default_student_travel     relax
+    sleep   2
+    #获取元素属性值     service_management      check_box_0     relax
+    全屏截图    ../../../../../../screenshot/relax/screen.png
+    sleep   2
+    确保checkbox勾选      ../../../../../screenshot/relax/screen.png      ../../../../../screenshot/relax/box_checked.png    0.9     exist
+    #校验图片包含   ../../../../../screenshot/relax/Highlight.png    ../../../../../screenshot/relax/move_in.png   0.9     exist
+#    点击元素    service_management      check_box_0     relax
+    点击按钮  service_management  save_button       relax
+    sleep  3
+查看前端页面
+    切到前端查看
+    sleep   3
+仍然显示学生旅程
+    显示出隐藏元素     school_page  entrance      relax
+#TC勾选时间轴展示的显示内容_659895
+设置学生旅程开启时间轴显示
+    登录用户所属角色不包含学生
+    关闭浏览器
+登录系统后办事大厅查看学生旅程
+    点击元素  school_page       login_button        relax
+    登录Relax     admin  admin
+    点击元素    school_page     lobbyTab        relax
+    校验入学阶段的全部服务事项
+按序新建教师_行政办公_教务中心
+    关闭浏览器
+    打开浏览器
+    进入校园旅程后台配置页面
+    新建一级旅程_带参       自动化测试教师旅程    教师
+    新建二级教师旅程_带参     行政办公
+    新建二级教师旅程_带参     教务中心
+退出登录查看教师旅程
+    进入校园旅程用户页面
+教师旅程在前端页面显示正常
+    切到前端查看服务排序
+#TC首页校园旅程显示的服务事项是已发布且在有效期和PC端的服务_685775
+创建旅程_自动化测试服务有效期
+    新建一级旅程_带参       自动化测试服务有效期      学生
+    悬浮鼠标    school_page  service_valid      relax
+    通用新建二级旅程    service_valid     service_valid_add     学生入学C      学生入学C
+    通用新建二级旅程    service_valid     service_valid_add     学生入学D      学生入学D
+    通用新建二级旅程    service_valid     service_valid_add     学生入学E      学生入学E
+    通用新建二级旅程    service_valid     service_valid_add     学生入学B      学生入学B
+    通用新建二级旅程    service_valid     service_valid_add     学生入学A      学生入学AService
+旅程CDE不显示服务事项
+    显示出隐藏元素     school_page      student_entrance_a      relax
+    悬浮鼠标    school_page  student_entrance_a      relax
+    显示出隐藏元素     school_page      student_entrance_AServic      relax
+    悬浮鼠标    school_page  student_entrance_AServic      relax
+    当前页面包含      school_page  student_entrance_a      relax
+    悬浮鼠标    school_page  student_entrance_b      relax
+    当前页面包含      school_page  student_entrance_b      relax
+    悬浮鼠标    school_page  student_entrance_c      relax
+    全屏截图    ../../../../../../screenshot/relax/screen.png
+    sleep   2
+    校验图片包含   ../../../../../screenshot/relax/screen.png    ../../../../../screenshot/relax/no_service.png   0.7    exist
+    悬浮鼠标    school_page  student_entrance_d      relax
+    sleep   2
+    校验图片包含   ../../../../../screenshot/relax/screen.png    ../../../../../screenshot/relax/no_service.png   0.7    exist
+    悬浮鼠标    school_page  student_entrance_e     relax
+    sleep   2
+    校验图片包含   ../../../../../screenshot/relax/screen.png    ../../../../../screenshot/relax/no_service.png   0.7    exist

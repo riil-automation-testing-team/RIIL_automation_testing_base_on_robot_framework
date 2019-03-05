@@ -29,8 +29,6 @@ Resource  riil_common_keyword_resource.txt
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     Element Should Not Be Visible    ${name}
 
-
-
 登录名称
     [Arguments]  ${str_name}
     输入字符串  login_page  username  ${str_name}    relax
@@ -165,5 +163,29 @@ Resource  riil_common_keyword_resource.txt
     按键操作   service_management  travel_belong_role  \\8      relax
     按键操作   service_management  travel_belong_role  \\8      relax
     输入字符串  service_management     travel_belong_role   学生入学     relax
+    按键操作   service_management     travel_belong_role    \\13        relax
+    点击按钮  service_management  save_button       relax
+
+判断checkbox是否为选中
+    [Arguments]    ${act}   ${exp}  ${value}    ${isexist}
+    ${var}      set variable  True
+    ${differ}    Run Keyword And Return Status   match_img     ${act}   ${exp}    ${value}     ${isexist}
+    run keyword if  '${differ}'=='${var}'   点击元素        service_management      check_box_0     relax
+
+确保checkbox勾选
+    [Arguments]    ${act}   ${exp}  ${value}    ${isexist}
+    ${var}      set variable  False
+    ${differ}   match_img     ${act}   ${exp}    ${value}     ${isexist}
+    log   ${differ}
+    run keyword if  '${differ}'=='${var}'   点击元素        service_management      check_box_0     relax
+
+通用新建二级旅程
+    [Arguments]    ${one_name}  ${add}      ${two_name}      ${service}
+    悬浮鼠标    school_page  ${one_name}     relax
+    点击元素    school_page  ${add}      relax
+    输入字符串   service_management  travel_name    ${two_name}      relax
+    按键操作   service_management  travel_belong_role  \\8      relax
+    按键操作   service_management  travel_belong_role  \\8      relax
+    输入字符串  service_management     travel_belong_role    ${service}      relax
     按键操作   service_management     travel_belong_role    \\13        relax
     点击按钮  service_management  save_button       relax

@@ -8,6 +8,7 @@ from functools import reduce
 import cv2
 import numpy as np
 import os
+from selenium import webdriver
 
 
 def get_data_from_excel(url):
@@ -40,7 +41,6 @@ def get_common_search(search_type, search_element_name):
     return str("//" + search_type + "[contains(text(), '" + search_element_name + "')]")
 
 def match_img(image, Target, value,flag):
-    print("hello")
     print(os.path.dirname(image))
     print(os.path.dirname(Target))
     print(os.path.exists(Target))
@@ -54,6 +54,7 @@ def match_img(image, Target, value,flag):
     print("loc = ",len(loc[0]))
     if  flag == 'exist':
         if len(loc[0]) == 0:
+            print("未找到")
             return False
         else:
             return True
@@ -80,6 +81,10 @@ def image_cut_special(path,out):
     box1 = (20, 100 , width-20, height-100)  # 不选中
     image1 = img.crop(box1)  # 图像裁剪
     image1.save(out)  # 存储裁剪得到的图像
+
+
+
+
 
 
 # if __name__ == '__main__':

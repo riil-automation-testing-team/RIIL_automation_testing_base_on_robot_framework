@@ -132,6 +132,10 @@ Library  ../lib/riil_helper.py
     [Arguments]   ${section}    ${xpath_name}        ${product}  ${limit}
     ${user1}  get_xpath  ${section}  ${xpath_name}   ${product}
     page should not contain element       ${user1}   ${limit}
+当前页面包含
+    [Arguments]   ${section}    ${xpath_name}        ${product}
+    ${user1}  get_xpath  ${section}  ${xpath_name}   ${product}
+    page should contain element      ${user1}
 校验CheckBox勾选
     [Arguments]   ${section}    ${xpath_name}        ${product}
     ${user}  get_xpath  ${section}  ${xpath_name}   ${product}
@@ -183,8 +187,10 @@ Library  ../lib/riil_helper.py
     log   ${path}
     Capture Page Screenshot      ${path}
 
-
 按元素截图
     [Arguments]    ${act}       ${exp}   ${path}       ${product}
      ${s}  get_xpath  ${act}   ${exp}   ${product}
      capture element screenshot  ${s}   ${path}
+
+
+
