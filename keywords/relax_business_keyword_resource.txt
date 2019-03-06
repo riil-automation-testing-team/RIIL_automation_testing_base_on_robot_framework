@@ -32,6 +32,8 @@ Library  ../lib/riil_helper.py
 
 #TC新建二级校园旅程
 新建二级角色分类学生分类关联的角色为学生
+    sleep  2
+    点击元素    service_management      create_new_travel       relax
     新建一级关联学生
     sleep   2
     新建二级校园旅程
@@ -45,7 +47,10 @@ Library  ../lib/riil_helper.py
     悬浮鼠标    service_management  move_mouse      relax
     点击元素    service_management  travel_name_triangle        relax
     点击元素    service_management  two_travel_name     relax
-    click element  //div[@class="select2-container select2-container-multi form-control"]/ul/li[2]
+    sleep  2
+    #click element  //div[@class="select2-container select2-container-multi form-control"]/ul//li[@class="select2-search-field"]
+    click element  //input[@data-frame-id="blongService"]
+    #点击元素   service_management       travel_belong_role      relax
     click element  //div[text()="ZXX测试跳转"]
     点击按钮  service_management  save_button       relax
 
@@ -601,3 +606,10 @@ Library  ../lib/riil_helper.py
     悬浮鼠标    school_page  student_entrance_e     relax
     sleep   2
     校验图片包含   ../../../../../screenshot/relax/screen.png    ../../../../../screenshot/relax/no_service.png   0.7    exist
+
+#TC二级旅程不可以拖动到其他一级角色旅程下_663650
+拖动二级旅程到一级旅程位置
+    悬浮鼠标    service_management      two_travel_name      relax
+    点击元素    service_management      two_travel_name      relax
+    sleep   1
+    拖动元素    service_management      two_travel_name      move_mouse_teacher     relax
