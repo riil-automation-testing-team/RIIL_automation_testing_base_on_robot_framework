@@ -4,20 +4,12 @@ Resource  riil_common_keyword_resource.txt
 Library  ../lib/riil_helper.py
 
 *** Keywords ***
-登录Relax
-    [Arguments]  ${username}  ${password}
-    暂停
-    登录名称    ${username}
-    登录密码    ${password}
-    登录
-    等待 5s
-    登录成功验证  工作台
+
 进入校园旅程用户页面   #用例Given
     启动Relax未登录首页
-
 #TC新建一级校园旅程
 进入校园旅程新建页面   #用例Given
-    登录Relax     admin  admin
+    登录Relax  admin  admin
     点击右展按钮
     显示出隐藏元素     service_management  service_manager     relax
     点击元素    service_management  service_manager   relax  #//span[text()='服务管理']
@@ -411,7 +403,7 @@ Library  ../lib/riil_helper.py
 #    全屏截图      ../../../../../../lib/spread.png
 #    image_cut_special    ../../../../../lib/spread.png       ../../../../../lib/spread.png
     全屏截图      ../../../../../../screenshot/relax/spread.png
-    image_cut_special    ../../../../../screenshot/relax/spread.png       ../../../../../screenshot/relax/spread.png
+    image_cut_special    ../../../../../screenshot/relax/spread.png       ../../../../../screenshot/relax/spread.png    500     500  500     0
 
 服务事项依次往下排_不会出现横向和纵向滚动
 #     校验图片包含   ../../../../../lib/spread.png    ../../../../../lib/vertical.png   1.0    noexist
@@ -437,6 +429,8 @@ Library  ../lib/riil_helper.py
     sleep  3
     显示出隐藏元素      school_page         journeyCard         relax
     全屏截图       ../../../../../../screenshot/relax/threedot.png
+    image_cut_special    ../../../../../screenshot/relax/threedot.png       ../../../../../screenshot/relax/threedot.png    500     500  500     0
+
     sleep  2
     校验图片包含   ../../../../../screenshot/relax/threedot.png    ../../../../../screenshot/relax/threedot_exp.png   0.8    exist
 #TC文本超长省略_但鼠标移动上去可以在title显示完整内容_374824
@@ -613,3 +607,35 @@ Library  ../lib/riil_helper.py
     点击元素    service_management      two_travel_name      relax
     sleep   1
     拖动元素    service_management      two_travel_name      move_mouse_teacher     relax
+#TC一键只读_679258
+进入后台服务定义页面
+    进入后台管理页面    service_manager     service_define
+新建申请表单
+    sleep  1
+    点击元素  service_define    new_create_service_category    relax
+    sleep   2
+    点击元素  service_define       new_create_request_category     relax
+    输入字符串  service_define       category_name      自动化测试服务单  relax
+    点击元素    service_management  save_button       relax
+    sleep  2
+    悬浮鼠标  service_define        approval_opinion        relax
+    sleep  1
+    点击元素   service_define       config      relax
+    点击元素    service_define      tab_design      relax
+    点击元素    service_define      three_dot       relax
+    点击元素    service_define      only_read       relax
+    当前页面包含      service_define      approval_option_only_read       relax
+    当前页面包含      service_define      approval_result_reject_only_read       relax
+    当前页面包含      service_define      approval_result_agree_only_read       relax
+
+一键设置全部只读
+   点击元素    service_define      only_read       relax
+设置成功
+    当前页面包含      service_define      approval_option_only_read       relax
+    当前页面包含      service_define      approval_result_reject_only_read       relax
+    当前页面包含      service_define      approval_result_agree_only_read       relax
+    点击元素       service_define      approval_option_only_read       relax
+    显示出隐藏元素  service_define        authority       relax
+    点击元素  service_define        authority       relax
+保存视图
+#保存成功

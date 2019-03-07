@@ -36,12 +36,13 @@ Library  ../lib/riil_helper.py
 点击按钮
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
-    click button   ${name}
+    click button  ${name}
 
 点击元素
     [Arguments]  ${section}  ${xpath_name}  ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     click element  ${name}
+    暂停
 
 输入字符串Excel版
     [Arguments]   ${str_xpath}   ${str_name}
@@ -68,6 +69,7 @@ Library  ../lib/riil_helper.py
     [Arguments]  ${section}  ${xpath_name}   ${product}
     ${name}  get_xpath  ${section}  ${xpath_name}   ${product}
     page should not contain element  ${name}
+
 
 
 #add by lijun
@@ -192,5 +194,8 @@ Library  ../lib/riil_helper.py
      ${s}  get_xpath  ${act}   ${exp}   ${product}
      capture element screenshot  ${s}   ${path}
 
-
+元素是disable
+    [Arguments]    ${section}  ${xpath_name}    ${product}
+    ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
+    Element Should Be Disabled      ${s}
 

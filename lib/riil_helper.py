@@ -71,19 +71,21 @@ def image_cmp(act,exp):
     differ = math.sqrt(reduce(operator.add, list(map(lambda a, b: (a - b) ** 2, h1, h2))) / len(h1))
     return differ
 
-def image_cut_special(path,out):
+def image_cut_special(path,out,left,top,right,down):
     print(os.path.dirname(path))
-    img = cv2.imread(path)
-    height = img.shape[0]
-    width = img.shape[1]
-    print(height, width)
+    # img = cv2.imread(path)
+    # height = img.shape[0]
+    # width = img.shape[1]
+    # print(height, width)
     img = Image.open(path)  # 打开当前路径图像
-    box1 = (20, 100 , width-20, height-100)  # 不选中
+    width,height=img.size
+    left = int(left)
+    top = int(top)
+    right = int(right)
+    down = int(down)
+    box1 = (left, top , width-right, height-down)  # 不选中
     image1 = img.crop(box1)  # 图像裁剪
     image1.save(out)  # 存储裁剪得到的图像
-
-
-
 
 
 

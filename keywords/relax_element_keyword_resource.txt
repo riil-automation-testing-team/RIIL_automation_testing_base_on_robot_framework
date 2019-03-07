@@ -3,6 +3,14 @@ Library  Selenium2Library
 Library  ../lib/riil_helper.py
 Resource  riil_common_keyword_resource.txt
 *** Keywords ***
+登录Relax
+    [Arguments]  ${username}  ${password}
+    暂停
+    登录名称    ${username}
+    登录密码    ${password}
+    登录
+    等待 5s
+    登录成功验证  工作台
 校验包含字符串
     [Arguments]    ${section}  ${xpath_name}  ${str}   ${product}
     ${s}  get_xpath  ${section}  ${xpath_name}  ${product}
@@ -97,7 +105,6 @@ Resource  riil_common_keyword_resource.txt
         按键操作   service_management     travel_belong_role    \\13        relax
         点击按钮  service_management  save_button       relax
         显示出隐藏元素     service_management  move_mouse      relax
-        #点击元素    service_management  travel_name_triangle        relax
         sleep  1
         悬浮鼠标    service_management      two_travel_name     relax
         sleep   1
@@ -189,3 +196,12 @@ Resource  riil_common_keyword_resource.txt
     输入字符串  service_management     travel_belong_role    ${service}      relax
     按键操作   service_management     travel_belong_role    \\13        relax
     点击按钮  service_management  save_button       relax
+
+进入后台管理页面
+    [Arguments]    ${one_name}  ${two_name}
+    登录Relax     admin  admin
+    点击右展按钮
+    显示出隐藏元素     service_management  service_manager     relax
+    点击元素    service_management  ${one_name}   relax  #//span[text()='服务管理']
+    显示出隐藏元素     service_management  service_manager_title       relax
+    点击元素    service_management  ${two_name}         relax    #//span[text()='校园旅程分类']
