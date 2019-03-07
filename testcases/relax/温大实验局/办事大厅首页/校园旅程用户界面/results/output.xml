@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190306 17:50:58.272" rpa="false">
+<suite id="s1" name="校园旅程字数过长时 有省略号 650745" source="D:\robotframework-master\RIIL_automation_testing_base_on_robot_framework-dev\testcases\relax\温大实验局\办事大厅首页\校园旅程用户界面\校园旅程字数过长时_有省略号_650745.robot">
+<test id="s1-t1" name="校园旅程字数过长时_有省略号_650745">
+<kw name="打开浏览器" library="relax_element_keyword_resource" type="setup">
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>login_page</arg>
+<arg>relax</arg>
+<arg>relax</arg>
+</arguments>
+<assign>
+<var>${url}</var>
+</assign>
+<msg timestamp="20190306 17:50:58.819" level="INFO">${url} = http://172.17.189.63:9090/relax</msg>
+<status status="PASS" starttime="20190306 17:50:58.817" endtime="20190306 17:50:58.819"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20190306 17:50:58.820" level="INFO">http://172.17.189.63:9090/relax</msg>
+<status status="PASS" starttime="20190306 17:50:58.820" endtime="20190306 17:50:58.820"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190306 17:50:58.820" level="INFO">Opening browser 'chrome' to base url 'http://172.17.189.63:9090/relax'.</msg>
+<status status="PASS" starttime="20190306 17:50:58.820" endtime="20190306 17:51:01.474"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20190306 17:51:01.474" endtime="20190306 17:51:02.630"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:50:58.816" endtime="20190306 17:51:02.631"></status>
+</kw>
+<kw name="given 进入校园旅程后台配置页面" library="relax_business_keyword_resource">
+<kw name="进入校园旅程新建页面" library="relax_business_keyword_resource">
+<kw name="登录Relax" library="relax_business_keyword_resource">
+<arguments>
+<arg>admin</arg>
+<arg>admin</arg>
+</arguments>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:03.634" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:02.633" endtime="20190306 17:51:03.634"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:02.632" endtime="20190306 17:51:03.634"></status>
+</kw>
+<kw name="登录名称" library="relax_element_keyword_resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>login_page</arg>
+<arg>username</arg>
+<arg>${str_name}</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:03.637" level="INFO">${user} = //*[@name="username"]</msg>
+<status status="PASS" starttime="20190306 17:51:03.635" endtime="20190306 17:51:03.637"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:05.639" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:03.637" endtime="20190306 17:51:05.639"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:05.639" level="INFO">Typing text 'admin' into text field '//*[@name="username"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:05.639" endtime="20190306 17:51:05.746"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:03.635" endtime="20190306 17:51:05.746"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:03.634" endtime="20190306 17:51:05.746"></status>
+</kw>
+<kw name="登录密码" library="relax_element_keyword_resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>login_page</arg>
+<arg>password</arg>
+<arg>${str_name}</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:05.749" level="INFO">${user} = //input[@placeholder='密码']</msg>
+<status status="PASS" starttime="20190306 17:51:05.747" endtime="20190306 17:51:05.749"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:07.749" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:05.749" endtime="20190306 17:51:07.749"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:07.749" level="INFO">Typing text 'admin' into text field '//input[@placeholder='密码']'.</msg>
+<status status="PASS" starttime="20190306 17:51:07.749" endtime="20190306 17:51:07.828"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:05.747" endtime="20190306 17:51:07.828"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:05.746" endtime="20190306 17:51:07.828"></status>
+</kw>
+<kw name="登录" library="relax_element_keyword_resource">
+<kw name="点击按钮" library="riil_common_keyword_resource">
+<arguments>
+<arg>login_page</arg>
+<arg>login_button1</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:07.830" level="INFO">${name} = //*[@class="btn btn-block btn-primary"]</msg>
+<status status="PASS" starttime="20190306 17:51:07.829" endtime="20190306 17:51:07.830"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:07.830" level="INFO">Clicking button '//*[@class="btn btn-block btn-primary"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:07.830" endtime="20190306 17:51:07.897"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:07.828" endtime="20190306 17:51:07.898"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:07.828" endtime="20190306 17:51:07.898"></status>
+</kw>
+<kw name="等待 5s" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20190306 17:51:12.900" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:07.898" endtime="20190306 17:51:12.900"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:07.898" endtime="20190306 17:51:12.900"></status>
+</kw>
+<kw name="登录成功验证" library="relax_element_keyword_resource">
+<arguments>
+<arg>工作台</arg>
+</arguments>
+<kw name="校验包含字符串" library="relax_element_keyword_resource">
+<arguments>
+<arg>login_page</arg>
+<arg>workspace</arg>
+<arg>${str_name}</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${s}</var>
+</assign>
+<msg timestamp="20190306 17:51:12.902" level="INFO">${s} = //a[@data-frame-id='workTab']</msg>
+<status status="PASS" starttime="20190306 17:51:12.901" endtime="20190306 17:51:12.902"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by ``locator``.</doc>
+<arguments>
+<arg>${s}</arg>
+</arguments>
+<assign>
+<var>${fullstr}</var>
+</assign>
+<msg timestamp="20190306 17:51:12.933" level="INFO">${fullstr} = 工作台</msg>
+<status status="PASS" starttime="20190306 17:51:12.902" endtime="20190306 17:51:12.933"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${fullstr}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:12.933" level="INFO">工作台</msg>
+<status status="PASS" starttime="20190306 17:51:12.933" endtime="20190306 17:51:12.934"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${fullstr}</arg>
+<arg>${str}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:12.934" endtime="20190306 17:51:12.934"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:12.900" endtime="20190306 17:51:12.934"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:12.900" endtime="20190306 17:51:12.934"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:02.632" endtime="20190306 17:51:12.934"></status>
+</kw>
+<kw name="点击右展按钮" library="relax_element_keyword_resource">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>class=arrow-right</arg>
+</arguments>
+<msg timestamp="20190306 17:51:12.934" level="INFO">Clicking element 'class=arrow-right'.</msg>
+<status status="PASS" starttime="20190306 17:51:12.934" endtime="20190306 17:51:13.002"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:12.934" endtime="20190306 17:51:13.002"></status>
+</kw>
+<kw name="显示出隐藏元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>service_manager</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:13.005" level="INFO">${user} = //span[text()='服务管理']</msg>
+<status status="PASS" starttime="20190306 17:51:13.003" endtime="20190306 17:51:13.005"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:13.005" level="INFO">//span[text()='服务管理']</msg>
+<status status="PASS" starttime="20190306 17:51:13.005" endtime="20190306 17:51:13.006"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:14.008" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:13.006" endtime="20190306 17:51:14.008"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:13.006" endtime="20190306 17:51:14.008"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:14.008" endtime="20190306 17:51:14.049"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:13.002" endtime="20190306 17:51:14.049"></status>
+</kw>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>service_manager</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:14.051" level="INFO">${name} = //span[text()='服务管理']</msg>
+<status status="PASS" starttime="20190306 17:51:14.049" endtime="20190306 17:51:14.051"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:14.051" level="INFO">Clicking element '//span[text()='服务管理']'.</msg>
+<status status="PASS" starttime="20190306 17:51:14.051" endtime="20190306 17:51:14.106"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:14.049" endtime="20190306 17:51:14.106"></status>
+</kw>
+<kw name="显示出隐藏元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>service_manager_title</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:14.108" level="INFO">${user} = //span[text()="服务旅程分类"]</msg>
+<status status="PASS" starttime="20190306 17:51:14.107" endtime="20190306 17:51:14.108"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:14.108" level="INFO">//span[text()="服务旅程分类"]</msg>
+<status status="PASS" starttime="20190306 17:51:14.108" endtime="20190306 17:51:14.108"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:15.110" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:14.109" endtime="20190306 17:51:15.110"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:14.108" endtime="20190306 17:51:15.110"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:15.110" endtime="20190306 17:51:15.153"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:14.106" endtime="20190306 17:51:15.153"></status>
+</kw>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>service_manager_title</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:15.155" level="INFO">${name} = //span[text()="服务旅程分类"]</msg>
+<status status="PASS" starttime="20190306 17:51:15.153" endtime="20190306 17:51:15.155"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:15.155" level="INFO">Clicking element '//span[text()="服务旅程分类"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:15.155" endtime="20190306 17:51:15.256"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:15.153" endtime="20190306 17:51:15.256"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:02.631" endtime="20190306 17:51:15.256"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:02.631" endtime="20190306 17:51:15.256"></status>
+</kw>
+<kw name="and 新建名字超长的二级旅程" library="relax_business_keyword_resource">
+<kw name="新建一级关联学生" library="relax_element_keyword_resource">
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>input_category_name</arg>
+<arg>自动化测试学生分类一级</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:15.262" level="INFO">${user} = //input[@data-frame-id="roleName"]</msg>
+<status status="PASS" starttime="20190306 17:51:15.258" endtime="20190306 17:51:15.262"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:17.263" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:15.262" endtime="20190306 17:51:17.263"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:17.263" level="INFO">Typing text '自动化测试学生分类一级' into text field '//input[@data-frame-id="roleName"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:17.263" endtime="20190306 17:51:17.370"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:15.258" endtime="20190306 17:51:17.370"></status>
+</kw>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>check_box_0</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:17.372" level="INFO">${name} = //input[@id="checkbox-0"]</msg>
+<status status="PASS" starttime="20190306 17:51:17.370" endtime="20190306 17:51:17.372"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:17.372" level="INFO">Clicking element '//input[@id="checkbox-0"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:17.372" endtime="20190306 17:51:17.470"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:17.370" endtime="20190306 17:51:17.470"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:19.473" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:17.470" endtime="20190306 17:51:19.473"></status>
+</kw>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>belong_role</arg>
+<arg>学生</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:19.476" level="INFO">${user} = //input[@data-frame-id="blongRole"]</msg>
+<status status="PASS" starttime="20190306 17:51:19.474" endtime="20190306 17:51:19.476"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:21.478" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:19.476" endtime="20190306 17:51:21.478"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:21.478" level="INFO">Typing text '学生' into text field '//input[@data-frame-id="blongRole"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:21.478" endtime="20190306 17:51:21.617"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:19.473" endtime="20190306 17:51:21.618"></status>
+</kw>
+<kw name="按键操作" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>belong_role</arg>
+<arg>\\13</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:21.620" level="INFO">${user} = //input[@data-frame-id="blongRole"]</msg>
+<status status="PASS" starttime="20190306 17:51:21.618" endtime="20190306 17:51:21.620"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:22.621" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:21.620" endtime="20190306 17:51:22.621"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:21.620" endtime="20190306 17:51:22.622"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${key}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:22.622" endtime="20190306 17:51:22.662"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:21.618" endtime="20190306 17:51:22.663"></status>
+</kw>
+<kw name="点击按钮" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>save_button</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:22.664" level="INFO">${name} = //button[text()="保存"]</msg>
+<status status="PASS" starttime="20190306 17:51:22.663" endtime="20190306 17:51:22.664"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:22.665" level="INFO">Clicking button '//button[text()="保存"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:22.664" endtime="20190306 17:51:22.754"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:22.663" endtime="20190306 17:51:22.754"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:15.257" endtime="20190306 17:51:22.754"></status>
+</kw>
+<kw name="显示出隐藏元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>move_mouse</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:22.757" level="INFO">${user} = //a[text()="自动化测试学生分类一级" ]</msg>
+<status status="PASS" starttime="20190306 17:51:22.755" endtime="20190306 17:51:22.757"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:22.757" level="INFO">//a[text()="自动化测试学生分类一级" ]</msg>
+<status status="PASS" starttime="20190306 17:51:22.757" endtime="20190306 17:51:22.757"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:23.759" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:22.757" endtime="20190306 17:51:23.759"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:22.757" endtime="20190306 17:51:23.759"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:23.759" endtime="20190306 17:51:23.797"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:22.754" endtime="20190306 17:51:23.797"></status>
+</kw>
+<kw name="悬浮鼠标" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>move_mouse</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:23.799" level="INFO">${user} = //a[text()="自动化测试学生分类一级" ]</msg>
+<status status="PASS" starttime="20190306 17:51:23.798" endtime="20190306 17:51:23.799"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:24.802" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:23.800" endtime="20190306 17:51:24.802"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:23.799" endtime="20190306 17:51:24.802"></status>
+</kw>
+<kw name="Mouse Over" library="Selenium2Library">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:24.802" level="INFO">Simulating Mouse Over on element '//a[text()="自动化测试学生分类一级" ]'.</msg>
+<status status="PASS" starttime="20190306 17:51:24.802" endtime="20190306 17:51:24.823"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:23.797" endtime="20190306 17:51:24.823"></status>
+</kw>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>add_icon</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:24.825" level="INFO">${name} = //a[text()='自动化测试学生分类一级']/i[2]</msg>
+<status status="PASS" starttime="20190306 17:51:24.824" endtime="20190306 17:51:24.825"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:24.825" level="INFO">Clicking element '//a[text()='自动化测试学生分类一级']/i[2]'.</msg>
+<status status="PASS" starttime="20190306 17:51:24.825" endtime="20190306 17:51:24.910"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:24.823" endtime="20190306 17:51:24.910"></status>
+</kw>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>travel_name</arg>
+<arg>中华人民共和国中央人民政府中国共产党万岁万岁万万岁</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:24.912" level="INFO">${user} = //input[@placeholder="旅程名称" ]</msg>
+<status status="PASS" starttime="20190306 17:51:24.911" endtime="20190306 17:51:24.912"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:26.915" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:24.913" endtime="20190306 17:51:26.916"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:26.917" level="INFO">Typing text '中华人民共和国中央人民政府中国共产党万岁万岁万万岁' into text field '//input[@placeholder="旅程名称" ]'.</msg>
+<status status="PASS" starttime="20190306 17:51:26.916" endtime="20190306 17:51:27.098"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:24.910" endtime="20190306 17:51:27.098"></status>
+</kw>
+<kw name="输入字符串" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>travel_belong_role</arg>
+<arg>学生入学</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:27.100" level="INFO">${user} = //input[@data-frame-id="blongService"]</msg>
+<status status="PASS" starttime="20190306 17:51:27.099" endtime="20190306 17:51:27.100"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:29.102" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:27.100" endtime="20190306 17:51:29.102"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${str_name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:29.102" level="INFO">Typing text '学生入学' into text field '//input[@data-frame-id="blongService"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:29.102" endtime="20190306 17:51:29.260"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:27.098" endtime="20190306 17:51:29.260"></status>
+</kw>
+<kw name="按键操作" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>travel_belong_role</arg>
+<arg>\\13</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:29.263" level="INFO">${user} = //input[@data-frame-id="blongService"]</msg>
+<status status="PASS" starttime="20190306 17:51:29.260" endtime="20190306 17:51:29.263"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:30.265" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:29.263" endtime="20190306 17:51:30.265"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:29.263" endtime="20190306 17:51:30.265"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Deprecated use `Press Keys` instead.</doc>
+<arguments>
+<arg>${user}</arg>
+<arg>${key}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:30.265" endtime="20190306 17:51:30.302"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:29.260" endtime="20190306 17:51:30.303"></status>
+</kw>
+<kw name="点击按钮" library="riil_common_keyword_resource">
+<arguments>
+<arg>service_management</arg>
+<arg>save_button</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:30.305" level="INFO">${name} = //button[text()="保存"]</msg>
+<status status="PASS" starttime="20190306 17:51:30.303" endtime="20190306 17:51:30.305"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:30.305" level="INFO">Clicking button '//button[text()="保存"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:30.305" endtime="20190306 17:51:30.391"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:30.303" endtime="20190306 17:51:30.391"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:15.257" endtime="20190306 17:51:30.391"></status>
+</kw>
+<kw name="when 切到前端查看" library="relax_business_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20190306 17:51:33.394" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:30.392" endtime="20190306 17:51:33.394"></status>
+</kw>
+<kw name="点击元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>school_page</arg>
+<arg>lobbyTab</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20190306 17:51:33.396" level="INFO">${name} = //a[@data-frame-id="lobbyTab"]</msg>
+<status status="PASS" starttime="20190306 17:51:33.394" endtime="20190306 17:51:33.396"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:33.396" level="INFO">Clicking element '//a[@data-frame-id="lobbyTab"]'.</msg>
+<status status="PASS" starttime="20190306 17:51:33.396" endtime="20190306 17:51:33.483"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:33.394" endtime="20190306 17:51:33.483"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20190306 17:51:36.486" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:33.484" endtime="20190306 17:51:36.486"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:30.392" endtime="20190306 17:51:36.486"></status>
+</kw>
+<kw name="then 前端页面对应旅程出现省略号" library="relax_business_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20190306 17:51:39.489" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:36.486" endtime="20190306 17:51:39.489"></status>
+</kw>
+<kw name="显示出隐藏元素" library="riil_common_keyword_resource">
+<arguments>
+<arg>school_page</arg>
+<arg>journeyCard</arg>
+<arg>relax</arg>
+</arguments>
+<kw name="Get Xpath" library="riil_helper">
+<arguments>
+<arg>${section}</arg>
+<arg>${xpath_name}</arg>
+<arg>${product}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20190306 17:51:39.492" level="INFO">${user} = //div[@data-frame-id="journeyCard"]</msg>
+<status status="PASS" starttime="20190306 17:51:39.490" endtime="20190306 17:51:39.492"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:39.493" level="INFO">//div[@data-frame-id="journeyCard"]</msg>
+<status status="PASS" starttime="20190306 17:51:39.492" endtime="20190306 17:51:39.493"></status>
+</kw>
+<kw name="暂停" library="riil_common_keyword_resource">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190306 17:51:40.493" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190306 17:51:39.493" endtime="20190306 17:51:40.493"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:39.493" endtime="20190306 17:51:40.493"></status>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<doc>Scrolls an element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:40.494" endtime="20190306 17:51:40.539"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:39.489" endtime="20190306 17:51:40.539"></status>
+</kw>
+<kw name="全屏截图" library="riil_common_keyword_resource">
+<arguments>
+<arg>../../../../../../screenshot/relax/threedot.png</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:40.539" level="INFO">../../../../../../screenshot/relax/threedot.png</msg>
+<status status="PASS" starttime="20190306 17:51:40.539" endtime="20190306 17:51:40.539"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${path}</arg>
+</arguments>
+<msg timestamp="20190306 17:51:40.965" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../../../../../../screenshot/relax/threedot.png"&gt;&lt;img src="../../../../../../screenshot/relax/threedot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190306 17:51:40.540" endtime="20190306 17:51:40.965"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:40.539" endtime="20190306 17:51:40.965"></status>
+</kw>
+<kw name="Image Cut Special" library="riil_helper">
+<arguments>
+<arg>../../../../../screenshot/relax/threedot.png</arg>
+<arg>../../../../../screenshot/relax/threedot.png</arg>
+<arg>500</arg>
+<arg>500</arg>
+<arg>500</arg>
+<arg>0</arg>
+</arguments>
+<msg timestamp="20190306 17:51:41.044" level="INFO">../../../../../screenshot/relax</msg>
+<status status="PASS" starttime="20190306 17:51:40.965" endtime="20190306 17:51:41.044"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20190306 17:51:43.046" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190306 17:51:41.045" endtime="20190306 17:51:43.046"></status>
+</kw>
+<kw name="校验图片包含" library="riil_common_keyword_resource">
+<arguments>
+<arg>../../../../../screenshot/relax/threedot.png</arg>
+<arg>../../../../../screenshot/relax/threedot_exp.png</arg>
+<arg>0.8</arg>
+<arg>exist</arg>
+</arguments>
+<kw name="Match Img" library="riil_helper">
+<arguments>
+<arg>${act}</arg>
+<arg>${exp}</arg>
+<arg>${value}</arg>
+<arg>${isexist}</arg>
+</arguments>
+<assign>
+<var>${differ}</var>
+</assign>
+<msg timestamp="20190306 17:51:43.083" level="INFO">../../../../../screenshot/relax
+../../../../../screenshot/relax
+True
+loc =  1</msg>
+<msg timestamp="20190306 17:51:43.083" level="INFO">${differ} = True</msg>
+<status status="PASS" starttime="20190306 17:51:43.047" endtime="20190306 17:51:43.083"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>${differ}</arg>
+</arguments>
+<status status="PASS" starttime="20190306 17:51:43.083" endtime="20190306 17:51:43.084"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:43.046" endtime="20190306 17:51:43.084"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:51:36.486" endtime="20190306 17:51:43.084"></status>
+</kw>
+<status status="PASS" starttime="20190306 17:50:58.815" endtime="20190306 17:51:43.084" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190306 17:50:58.275" endtime="20190306 17:51:43.084"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="校园旅程字数过长时 有省略号 650745">校园旅程字数过长时 有省略号 650745</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
