@@ -1,14 +1,14 @@
 # coding=utf-8
 import configparser
-import xlrd
-from PIL import Image
 import math
 import operator
+import os
 from functools import reduce
+
 import cv2
 import numpy as np
-import os
-from selenium import webdriver
+import xlrd
+from PIL import Image
 
 
 def get_data_from_excel(url):
@@ -27,7 +27,7 @@ def get_data_from_excel(url):
 def get_xpath(section, name, product):
     cf = configparser.ConfigParser()
     if product == 'cheetah':
-        cf.read(u'../../../../data/cheetah_element_xpath.conf')
+        cf.read(u'../../../../data/cheetah_element_xpath.conf', encoding="utf-8-sig")
     elif product == 'relax':
         cf.read(u'../../../../../data/relax_element_xpath.conf', encoding="utf-8-sig")
     else:
