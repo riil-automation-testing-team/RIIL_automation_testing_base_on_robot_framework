@@ -66,6 +66,9 @@ Resource  riil_common_keyword_resource.txt
 
 
 添加位置名称和上级位置
+    创建上级位置  北京
+    等待 2s
+    打开菜单项  系统配置  位置管理
     添加位置
     输入名称   通用  IP_name  Automation testing
     从列表中选择上级位置
@@ -80,7 +83,7 @@ Resource  riil_common_keyword_resource.txt
     点击按钮    位置管理    close_icon  cheetah
 
 删除已存在位置
-    悬浮Search   span   Automation testing
+    悬浮Search   span   北京
     等待 2s
     点击元素    位置管理  delete_icon   cheetah
     点击按钮    通用  ok_button     cheetah

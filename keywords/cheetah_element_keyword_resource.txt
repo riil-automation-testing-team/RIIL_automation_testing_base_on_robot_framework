@@ -111,9 +111,23 @@ Resource          cheetah_business_keyword_resource.txt
     校验字符串    div    添加位置
 
 从列表中选择上级位置
-    点击查找指定元素    span    请选择
+#    点击查找指定元素    span    请选择
+    点击元素    位置管理   position_selector    cheetah
     等待 2s
     点击元素    位置管理    list_item    cheetah
+
+#如果上级位置不存在创建一个新的
+#    [Arguments]    ${address}
+#    点击查找指定元素    span    您还没有选中条目
+#    等待 2s
+#    ${Status}   Run Keyword and return status   元素没有被显示  div  ${address}
+#    Run Keyword If   "${Status}"=="True"   创建上级位置  ${address}
+#
+创建上级位置
+    [Arguments]    ${address}
+    添加位置
+    输入名称   通用  IP_name  ${address}
+    保存添加位置
 
 保存添加位置
     点击按钮    位置管理    save_button    cheetah
@@ -132,4 +146,5 @@ Resource          cheetah_business_keyword_resource.txt
 展开位置列表
     等待 2s
     点击元素    位置管理    expand_icon    cheetah
+
 
